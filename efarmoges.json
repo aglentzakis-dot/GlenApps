@@ -1,9 +1,8 @@
 {
-  "_odigies": "Για νέα εφαρμογή: πρόσθεσε ένα ακόμα στοιχείο στη λίστα «efarmoges». Η πύλη το διαβάζει μόνη της, χωρίς αναβάθμιση. Το «pro» είναι το τι ξεκλειδώνει το πακέτο GlenApps σε αυτήν.",
+  "_odigies": "Για νέα εφαρμογή: πρόσθεσε ένα ακόμα στοιχείο στη λίστα «efarmoges». Η πύλη το διαβάζει μόνη της, χωρίς αναβάθμιση. Το «pro» είναι το τι ξεκλειδώνει το πακέτο GlenApps σε αυτήν. Το πακέτο είναι μόνο ετήσιο.",
   "paketo": {
     "onoma": "GlenApps — όλες οι εφαρμογές",
     "timi_etos": 99,
-    "timi_2etia": 169,
     "athroisma_xorista": 120
   },
   "efarmoges": [
@@ -13,7 +12,7 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/dromologio/",
       "eikonidio": "https://aglentzakis-dot.github.io/dromologio/eikonidia/icon-192.png",
       "perigrafi": "Πελάτες, εργασίες, υπενθυμίσεις και η διαδρομή της ημέρας σου.",
-      "timi": "29 € τον χρόνο, μαζί με το Κοντά μου"
+      "timi": "29 € τον χρόνο"
     },
     {
       "id": "kontamou",
@@ -21,7 +20,7 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/kontamou/",
       "eikonidio": "https://aglentzakis-dot.github.io/kontamou/icon-192.png",
       "perigrafi": "Βρες μάστορες και επαγγελματίες πάνω στον χάρτη, κοντά σου.",
-      "timi": "Μαζί με το Δρομολόγιο"
+      "timi": "μαζί με το Δρομολόγιο"
     },
     {
       "id": "tameia",

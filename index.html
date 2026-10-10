@@ -8,13 +8,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.1">
+<meta name="app-version" content="0.2">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.1">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.1">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.2">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.2">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -120,6 +120,9 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 .timokatalogos .megali{font-size:17px;font-weight:800}
 .timokatalogos hr{border:0;border-top:1px dashed var(--grammi);margin:8px 0}
 .lathos{color:#B3261E!important;font-weight:600}
+.oroi{font-size:13.5px;color:var(--ble);background:#F4F7FA;border-radius:14px;padding:10px 12px;margin:8px 0}
+.oroi ul{margin:6px 0 0;padding-left:18px}.oroi li{margin:3px 0}
+.kleidi .proeid{color:#9A5B00!important;font-weight:600}
 .fyllo .seira{display:flex;gap:10px;margin-top:16px}
 .fyllo .seira button{flex:1}
 .k-aplo{background:#EEF1F4;color:var(--ble);font-weight:700;padding:13px 16px;border-radius:14px}
@@ -135,7 +138,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.1" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.2" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -146,7 +149,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.1" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.2" x="11" y="8.5" width="22" height="22"/>
     </svg>
     <div><h1>GlenApps</h1><small>Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
     <span class="ekdosi" id="ekdosiEtiketa"></span>
@@ -154,7 +157,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.1" alt="">
+      <img src="eikonidia/icon-192.png?v=0.2" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -199,7 +202,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.1";
+const APP_VERSION="0.2";
 const APP_BUILD="10/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
@@ -279,7 +282,7 @@ function zografiseKleidi(){
   if(KATASTASI.energo){
     k.className="kleidi energo";
     k.innerHTML=`<div class="pano"><div class="simadi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
-      <div><h2>Όλες οι εφαρμογές ξεκλειδωμένες</h2><p>Πακέτο GlenApps έως ${imerominia(KATASTASI.eos)} · ${KATASTASI.meres} ημέρες ακόμα</p></div></div>
+      <div><h2>Όλες οι εφαρμογές ξεκλειδωμένες</h2><p>Πακέτο GlenApps έως ${imerominia(KATASTASI.eos)} · ${KATASTASI.meres} ημέρες ακόμα</p>${KATASTASI.meres<=30?`<p class="proeid">Λήγει σύντομα — ανανέωσε για να συνεχίσει χωρίς διακοπή.</p>`:""}</div></div>
       <button class="k-aplo" style="margin-top:12px;width:100%" id="koumpiKleidi">Στοιχεία κλειδιού</button>`;
   }else{
     k.className="kleidi";
@@ -366,10 +369,19 @@ function anoixeKleidi(){
       :`<p>Ένα κλειδί ξεκλειδώνει το Pro σε όλες τις εφαρμογές GlenApps, και σε όσες προστεθούν.</p>`}
     <div class="timokatalogos">
       <div class="grammi megali"><span>Πακέτο GlenApps, 1 χρόνος</span><span>${p.timi_etos} €</span></div>
-      <div class="grammi megali"><span>Πακέτο GlenApps, 2 χρόνια</span><span>${p.timi_2etia} €</span></div>
       <hr><div class="grammi" style="font-weight:700"><span>Χωριστά ανά εφαρμογή (τον χρόνο)</span><span></span></div>
       ${xorista}
       <hr><div class="grammi" style="font-weight:700"><span>Σύνολο χωριστά</span><span>${p.athroisma_xorista} €</span></div>
+    </div>
+    <div class="oroi">
+      <b>Καθαρά πράγματα</b>
+      <ul>
+        <li>Το κλειδί ισχύει <b>1 χρόνο</b>, μέχρι την ημερομηνία που γράφει. Τη βλέπεις πάντα εδώ.</li>
+        <li><b>Δεν ανανεώνεται αυτόματα</b> και δεν γίνεται καμία χρέωση χωρίς να το ζητήσεις.</li>
+        <li>Θα σε ειδοποιήσουμε 30 ημέρες πριν λήξει. Αν ανανεώσεις νωρίτερα, ο νέος χρόνος <b>προστίθεται</b> στη λήξη σου· δεν χάνεις μέρες.</li>
+        <li>Αν χάσεις το κλειδί, σου ξαναστέλνουμε δωρεάν, με την <b>ίδια</b> ημερομηνία λήξης.</li>
+        <li>Όταν λήξει, <b>τα δεδομένα σου μένουν όλα</b>· κλειδώνουν μόνο οι λειτουργίες Pro.</li>
+      </ul>
     </div>
     ${energo?"":`<label for="kEmail">Ηλεκτρονικό ταχυδρομείο αγοράς</label>
     <input id="kEmail" type="email" inputmode="email" autocomplete="email" placeholder="π.χ. onoma@gmail.com">
