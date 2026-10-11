@@ -15,6 +15,14 @@
       "timi": "29 € τον χρόνο"
     },
     {
+      "id": "kontamou",
+      "onoma": "Κοντά μου",
+      "dieuthinsi": "https://aglentzakis-dot.github.io/kontamou/",
+      "eikonidio": "https://aglentzakis-dot.github.io/kontamou/icon-192.png",
+      "perigrafi": "Βρες μάστορες και επαγγελματίες πάνω στον χάρτη, κοντά σου.",
+      "timi": "μαζί με το Δρομολόγιο"
+    },
+    {
       "id": "paraggelies",
       "onoma": "Παραγγελίες",
       "dieuthinsi": "https://aglentzakis-dot.github.io/paraggelies/",
@@ -29,14 +37,6 @@
       "eikonidio": "https://aglentzakis-dot.github.io/tameia/icon-192.png",
       "perigrafi": "Έσοδα και έξοδα για το σπίτι, την επιχείρηση και τα κοινόχρηστα.",
       "timi": "15 € τον χρόνο"
-    },
-    {
-      "id": "kontamou",
-      "onoma": "Κοντά μου",
-      "dieuthinsi": "https://aglentzakis-dot.github.io/kontamou/",
-      "eikonidio": "https://aglentzakis-dot.github.io/kontamou/icon-192.png",
-      "perigrafi": "Βρες μάστορες και επαγγελματίες πάνω στον χάρτη, κοντά σου.",
-      "timi": "μαζί με το Δρομολόγιο"
     },
     {
       "id": "imerologio",

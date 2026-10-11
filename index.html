@@ -8,13 +8,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.7">
+<meta name="app-version" content="0.8">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.7">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.7">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.8">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -146,7 +146,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.7" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.8" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -157,7 +157,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.7" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.8" x="11" y="8.5" width="22" height="22"/>
     </svg>
     <div><h1>GlenApps</h1><small>Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
     <span class="ekdosi" id="ekdosiEtiketa"></span>
@@ -165,7 +165,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.7" alt="">
+      <img src="eikonidia/icon-192.png?v=0.8" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -213,7 +213,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.7";
+const APP_VERSION="0.8";
 const APP_BUILD="10/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
@@ -312,7 +312,7 @@ function zografise(){
       ${eikonidioHTML(a)}
       <b>${esc(a.onoma)}</b>
       <span>${esc(a.perigrafi)}</span>
-      <em class="etiketa ${pro?"pro":""}" style="font-style:normal">${pro?"✓ Pro ξεκλείδωτο":"Δωρεάν έκδοση"}</em>
+      <em class="etiketa ${pro?"pro":""}" style="font-style:normal">${pro?"✓ Pro ξεκλείδωτο":"Δωρεάν + Pro"}</em>
     </button>`).join("")||`<p style="grid-column:1/-1;color:var(--apalo)">Η λίστα θα φορτωθεί μόλις υπάρξει σύνδεση στο διαδίκτυο.</p>`;
   document.querySelectorAll(".plakidio").forEach(b=>b.onclick=()=>anoixeEfarmogi(+b.dataset.i));
   xtiseBara();
