@@ -8,13 +8,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.5">
+<meta name="app-version" content="0.6">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.5">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.5">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.6">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.6">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -107,7 +107,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 #katobara .spiti{background:var(--kitrino);color:var(--ble);font-weight:700}
 #katobara .lista{flex:1;display:flex;overflow-x:auto;scrollbar-width:none;gap:2px;padding:0 4px}
 #katobara .lista::-webkit-scrollbar{display:none}
-#katobara .efarm{flex:none;width:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#8aa0b4;font-size:10.5px;border-top:3px solid transparent;opacity:.42;transition:opacity .15s,transform .12s;touch-action:none}
+#katobara .efarm{flex:none;width:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#8aa0b4;font-size:10.5px;border-top:3px solid transparent;opacity:.42;transition:opacity .15s,transform .12s;touch-action:pan-x;user-select:none}
 #katobara .efarm img,#katobara .efarm .gramma{width:30px;height:30px;border-radius:8px;background:#fff;object-fit:cover;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--ble);filter:grayscale(.35)}
 #katobara .efarm.energi{border-top-color:var(--kitrino);color:#fff;opacity:1}
 #katobara .efarm.energi img,#katobara .efarm.energi .gramma{filter:none}
@@ -145,7 +145,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.5" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.6" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -156,7 +156,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.5" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.6" x="11" y="8.5" width="22" height="22"/>
     </svg>
     <div><h1>GlenApps</h1><small>Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
     <span class="ekdosi" id="ekdosiEtiketa"></span>
@@ -164,7 +164,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.5" alt="">
+      <img src="eikonidia/icon-192.png?v=0.6" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -212,7 +212,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.5";
+const APP_VERSION="0.6";
 const APP_BUILD="10/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
@@ -337,20 +337,29 @@ function xtiseBara(){
   l.innerHTML=taksinomimeni().map(({a,i})=>`<button class="efarm" data-i="${i}" data-id="${esc(a.id)}">${eikonidioHTML(a)}<span>${esc(a.onoma)}</span></button>`).join("");
   l.querySelectorAll(".efarm").forEach(b=>{
     b.onclick=()=>{if(molisSyrthike){molisSyrthike=false;return}anoixeEfarmogi(+b.dataset.i,true)};
-    let holdT=null,sernei=false,kinithike=false;
-    const telos=()=>{clearTimeout(holdT);if(sernei){sernei=false;b.classList.remove("sernetai");if(kinithike){apothikeuseSeira();molisSyrthike=true}}};
-    b.addEventListener("pointerdown",e=>{
-      kinithike=false;
-      holdT=setTimeout(()=>{sernei=true;kinithike=false;b.classList.add("sernetai");try{b.setPointerCapture(e.pointerId)}catch{}},260);
-    });
-    b.addEventListener("pointermove",e=>{
-      if(!sernei)return; kinithike=true;
+    let holdT=null,sernei=false,kinithike=false,sx=0,sy=0;
+    function kineited(e){
+      const x=(e.touches?e.touches[0]:e).clientX, y=(e.touches?e.touches[0]:e).clientY;
+      if(!sernei){ if(Math.abs(x-sx)>9||Math.abs(y-sy)>9)clearTimeout(holdT); return; }
+      if(e.cancelable)e.preventDefault(); kinithike=true;
       const alla=[...l.querySelectorAll(".efarm:not(.sernetai)")];
-      const meta=alla.find(o=>{const r=o.getBoundingClientRect();return e.clientX<r.left+r.width/2});
+      const meta=alla.find(o=>{const r=o.getBoundingClientRect();return x<r.left+r.width/2});
       if(meta)l.insertBefore(b,meta);else l.appendChild(b);
-    });
-    b.addEventListener("pointerup",telos);
-    b.addEventListener("pointercancel",telos);
+    }
+    function piase(){sernei=true;b.classList.add("sernetai");l.style.touchAction="none";try{navigator.vibrate&&navigator.vibrate(15)}catch{}}
+    function telos(){
+      clearTimeout(holdT);l.style.touchAction="";
+      document.removeEventListener("pointermove",kineited);document.removeEventListener("pointerup",telos);document.removeEventListener("pointercancel",telos);
+      document.removeEventListener("touchmove",kineited);document.removeEventListener("touchend",telos);
+      if(sernei){sernei=false;b.classList.remove("sernetai");if(kinithike){apothikeuseSeira();molisSyrthike=true}}
+    }
+    function arxi(e){
+      const p=e.touches?e.touches[0]:e; sx=p.clientX;sy=p.clientY;kinithike=false;sernei=false;
+      clearTimeout(holdT);holdT=setTimeout(piase,320);
+      document.addEventListener("pointermove",kineited,{passive:false});document.addEventListener("pointerup",telos);document.addEventListener("pointercancel",telos);
+      document.addEventListener("touchmove",kineited,{passive:false});document.addEventListener("touchend",telos);
+    }
+    b.addEventListener("pointerdown",arxi);
   });
 }
 
