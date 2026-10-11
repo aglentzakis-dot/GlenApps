@@ -8,13 +8,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.3">
+<meta name="app-version" content="0.4">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.3">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.3">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.4">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.4">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -97,14 +97,21 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 #fortosi{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:var(--fonto);color:var(--apalo);font-size:15px;z-index:2}
 #fortosi img{width:84px;height:84px;border-radius:22px;animation:palmos 1s ease-in-out infinite}
 @keyframes palmos{50%{transform:scale(.92);opacity:.75}}
-#katobara{height:calc(var(--bar) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:var(--ble);display:flex;align-items:stretch;flex:none}
+#katobara{height:calc(var(--bar) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:var(--ble);display:flex;align-items:stretch;flex:none;transition:transform .25s ease}
+#provoli.bara-krypti #katobara{transform:translateY(100%)}
+#baraLabi{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(var(--bar) + env(safe-area-inset-bottom));z-index:4;background:var(--ble);color:#fff;border:0;width:56px;height:20px;border-radius:12px 12px 0 0;display:flex;align-items:center;justify-content:center;box-shadow:0 -2px 8px rgba(0,0,0,.18);transition:bottom .25s ease}
+#provoli.bara-krypti #baraLabi{bottom:env(safe-area-inset-bottom)}
+#baraLabi svg{transition:transform .25s ease}
+#provoli.bara-krypti #baraLabi svg{transform:rotate(180deg)}
 #katobara .spiti,#katobara .exo{width:58px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:10.5px;gap:2px}
 #katobara .spiti{background:var(--kitrino);color:var(--ble);font-weight:700}
 #katobara .lista{flex:1;display:flex;overflow-x:auto;scrollbar-width:none;gap:2px;padding:0 4px}
 #katobara .lista::-webkit-scrollbar{display:none}
-#katobara .efarm{flex:none;width:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#C9D6E3;font-size:10.5px;border-top:3px solid transparent;opacity:.85}
-#katobara .efarm img,#katobara .efarm .gramma{width:30px;height:30px;border-radius:8px;background:#fff;object-fit:cover;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--ble)}
+#katobara .efarm{flex:none;width:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#8aa0b4;font-size:10.5px;border-top:3px solid transparent;opacity:.42;transition:opacity .15s,transform .12s;touch-action:none}
+#katobara .efarm img,#katobara .efarm .gramma{width:30px;height:30px;border-radius:8px;background:#fff;object-fit:cover;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--ble);filter:grayscale(.35)}
 #katobara .efarm.energi{border-top-color:var(--kitrino);color:#fff;opacity:1}
+#katobara .efarm.energi img,#katobara .efarm.energi .gramma{filter:none}
+#katobara .efarm.sernetai{opacity:.9;transform:scale(1.12);background:rgba(255,255,255,.08);border-radius:10px}
 #katobara .efarm span{max-width:60px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* Παράθυρα */
@@ -138,7 +145,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.3" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.4" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -149,7 +156,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.3" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.4" x="11" y="8.5" width="22" height="22"/>
     </svg>
     <div><h1>GlenApps</h1><small>Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
     <span class="ekdosi" id="ekdosiEtiketa"></span>
@@ -157,7 +164,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.3" alt="">
+      <img src="eikonidia/icon-192.png?v=0.4" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -185,6 +192,9 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
   <div id="plaisia">
     <div id="fortosi"><img id="fortosiEik" alt=""><span id="fortosiKeim">Ανοίγει…</span></div>
   </div>
+  <button id="baraLabi" aria-label="Εμφάνιση ή απόκρυψη μπάρας">
+    <svg width="22" height="14" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10l7-5 7 5"/></svg>
+  </button>
   <nav id="katobara">
     <button class="spiti" id="koumpiSpiti" aria-label="Αρχική">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg>
@@ -202,7 +212,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.3";
+const APP_VERSION="0.4";
 const APP_BUILD="10/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
@@ -304,10 +314,57 @@ function zografise(){
       <em class="etiketa ${pro?"pro":""}" style="font-style:normal">${pro?"✓ Pro ξεκλείδωτο":"Δωρεάν έκδοση"}</em>
     </button>`).join("")||`<p style="grid-column:1/-1;color:var(--apalo)">Η λίστα θα φορτωθεί μόλις υπάρξει σύνδεση στο διαδίκτυο.</p>`;
   document.querySelectorAll(".plakidio").forEach(b=>b.onclick=()=>anoixeEfarmogi(+b.dataset.i));
-  $("#kateListat").innerHTML=(DATA.efarmoges||[]).map((a,i)=>`<button class="efarm" data-i="${i}">${eikonidioHTML(a)}<span>${esc(a.onoma)}</span></button>`).join("");
-  document.querySelectorAll("#kateListat .efarm").forEach(b=>b.onclick=()=>anoixeEfarmogi(+b.dataset.i,true));
+  xtiseBara();
   simeioseEnergi();
 }
+
+/* ---------- Κάτω μπάρα: σειρά με σύρσιμο ---------- */
+const SEIRA_KEY="glenapps-seira-bara";
+function taksinomimeni(){
+  const saved=apothiki.pare(SEIRA_KEY)||[];
+  return (DATA.efarmoges||[]).map((a,i)=>({a,i})).sort((x,y)=>{
+    const px=saved.indexOf(x.a.id),py=saved.indexOf(y.a.id);
+    if(px<0&&py<0)return 0; if(px<0)return 1; if(py<0)return -1; return px-py;
+  });
+}
+function apothikeuseSeira(){
+  const ids=[...document.querySelectorAll("#kateListat .efarm")].map(b=>b.dataset.id);
+  apothiki.vale(SEIRA_KEY,ids);
+}
+let molisSyrthike=false;
+function xtiseBara(){
+  const l=$("#kateListat");
+  l.innerHTML=taksinomimeni().map(({a,i})=>`<button class="efarm" data-i="${i}" data-id="${esc(a.id)}">${eikonidioHTML(a)}<span>${esc(a.onoma)}</span></button>`).join("");
+  l.querySelectorAll(".efarm").forEach(b=>{
+    b.onclick=()=>{if(molisSyrthike){molisSyrthike=false;return}anoixeEfarmogi(+b.dataset.i,true)};
+    let holdT=null,sernei=false,kinithike=false;
+    const telos=()=>{clearTimeout(holdT);if(sernei){sernei=false;b.classList.remove("sernetai");if(kinithike){apothikeuseSeira();molisSyrthike=true}}};
+    b.addEventListener("pointerdown",e=>{
+      kinithike=false;
+      holdT=setTimeout(()=>{sernei=true;kinithike=false;b.classList.add("sernetai");try{b.setPointerCapture(e.pointerId)}catch{}},260);
+    });
+    b.addEventListener("pointermove",e=>{
+      if(!sernei)return; kinithike=true;
+      const alla=[...l.querySelectorAll(".efarm:not(.sernetai)")];
+      const meta=alla.find(o=>{const r=o.getBoundingClientRect();return e.clientX<r.left+r.width/2});
+      if(meta)l.insertBefore(b,meta);else l.appendChild(b);
+    });
+    b.addEventListener("pointerup",telos);
+    b.addEventListener("pointercancel",telos);
+  });
+}
+
+/* ---------- Κάτω μπάρα: εμφάνιση/απόκρυψη ---------- */
+const BARA_KRYPTI_KEY="glenapps-bara-krypti";
+function efarmoseBaraKatastasi(){
+  const krypti=apothiki.pare(BARA_KRYPTI_KEY)===true;
+  $("#provoli").classList.toggle("bara-krypti",krypti);
+}
+$("#baraLabi").onclick=()=>{
+  const nea=!$("#provoli").classList.contains("bara-krypti");
+  $("#provoli").classList.toggle("bara-krypti",nea);
+  apothiki.vale(BARA_KRYPTI_KEY,nea);
+};
 
 /* ---------- Άνοιγμα εφαρμογής μέσα στην πύλη ---------- */
 const plaisia=new Map();      // id -> iframe (μένουν φορτωμένα για γρήγορη εναλλαγή)
@@ -468,6 +525,7 @@ if("serviceWorker"in navigator&&/^https?:$/.test(location.protocol))navigator.se
 (async()=>{
   await elegxeKleidi();
   zografise();
+  efarmoseBaraKatastasi();
   kartaEgkat();
   fortoseLista();
   setTimeout(()=>{$("#enarxi").classList.add("svinei");setTimeout(()=>$("#enarxi").remove(),500)},1100);
