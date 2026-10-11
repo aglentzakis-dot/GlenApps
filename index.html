@@ -8,13 +8,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.8">
+<meta name="app-version" content="0.9">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.8">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.8">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.9">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.9">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -46,7 +46,9 @@ header{position:sticky;top:0;z-index:5;background:linear-gradient(180deg,var(--k
 .pineza{width:44px;height:52px;flex:none}
 header h1{margin:0;font-size:24px;line-height:1.1}
 header small{display:block;font-size:13px;color:var(--ble2);font-weight:500}
-header .ekdosi{margin-left:auto;white-space:nowrap;font-size:12px;background:rgba(255,255,255,.6);padding:5px 9px;border-radius:999px;font-weight:600}
+header .ekdosi{margin-left:8px;white-space:nowrap;font-size:12px;background:rgba(255,255,255,.6);padding:5px 9px;border-radius:999px;font-weight:600}
+.glossaKoumpi{margin-left:auto;display:flex;align-items:center;gap:5px;font-size:13px;font-weight:800;background:rgba(255,255,255,.65);padding:6px 11px;border-radius:999px;color:var(--ble)}
+.glossaKoumpi:active{background:rgba(255,255,255,.9)}
 
 main{max-width:760px;margin:0 auto;padding:16px 16px calc(28px + env(safe-area-inset-bottom))}
 
@@ -146,7 +148,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.8" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.9" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -157,15 +159,16 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.8" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.9" x="11" y="8.5" width="22" height="22"/>
     </svg>
-    <div><h1>GlenApps</h1><small>Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
+    <div><h1>GlenApps</h1><small id="ypotitlos">Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
+    <button class="glossaKoumpi" id="koumpiGlossa" aria-label="Γλώσσα / Language">🌐 <span id="glossaEtiketa">EL</span></button>
     <span class="ekdosi" id="ekdosiEtiketa"></span>
   </header>
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.8" alt="">
+      <img src="eikonidia/icon-192.png?v=0.9" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -178,7 +181,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
     <section class="kleidi" id="kartaKleidi"></section>
 
-    <h3 class="titlos">Οι εφαρμογές</h3>
+    <h3 class="titlos" id="titlosEfarm">Οι εφαρμογές</h3>
     <div class="plakidia" id="plakidia"></div>
 
     <footer>
@@ -199,12 +202,12 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
   <nav id="katobara">
     <button class="spiti" id="koumpiSpiti" aria-label="Αρχική">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg>
-      Αρχική
+      <span id="spitiEt">Αρχική</span>
     </button>
     <div class="lista" id="kateListat"></div>
     <button class="exo" id="koumpiExo" aria-label="Άνοιγμα χωριστά">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>
-      Χωριστά
+      <span id="exoEt">Χωριστά</span>
     </button>
   </nav>
 </div>
@@ -213,8 +216,8 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.8";
-const APP_BUILD="10/10/2026";
+const APP_VERSION="0.9";
+const APP_BUILD="11/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
 const EGKAT_OXI="glenapps-egkat-oxi";
@@ -230,6 +233,127 @@ const apothiki={
 };
 let xronosMinimatos;
 function minima(t){const m=$("#minima");m.textContent=t;m.classList.add("fainetai");clearTimeout(xronosMinimatos);xronosMinimatos=setTimeout(()=>m.classList.remove("fainetai"),2800)}
+
+/* ---------- Γλώσσα: Ελληνικά / English ---------- */
+const GL_KEY="glenapps-gl";
+let GL=(apothiki.pare(GL_KEY)==="en")?"en":"el";
+const TR={
+  el:{
+    ypotitlos:"Όλες οι εφαρμογές σου σε ένα σημείο",
+    enarxi_ypo:"Όλες οι εφαρμογές σου, με ένα εικονίδιο",
+    egkat_titlos:"Εγκατάσταση στο κινητό",
+    egkat_keim:"Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.",
+    egkat_iphone:"Στο Safari πάτα το κουμπί Κοινοποίηση και μετά «Προσθήκη στην οθόνη Αφετηρίας».",
+    egkat_koumpi:"Εγκατάσταση", egkat_katalava:"Κατάλαβα", oxi_tora:"Όχι τώρα",
+    titlos_efarm:"Οι εφαρμογές", elegxos:"Έλεγχος για νεότερη έκδοση",
+    arxiki:"Αρχική", xorista_k:"Χωριστά", anoigei:"Ανοίγει…", anoigei_tin:n=>"Ανοίγει το «"+n+"»…",
+    ekd:"έκδ. ", ekdosi_kato:(v,b)=>"Έκδοση "+v+" · Ανέβηκε "+b,
+    oles_ksekleid:"Όλες οι εφαρμογές ξεκλειδωμένες",
+    full_eos:(d,m)=>"GlenApps Full έως "+d+" · "+m+" ημέρες ακόμα",
+    lixei_sintoma:"Λήγει σύντομα — ανανέωσε για να συνεχίσει χωρίς διακοπή.",
+    stoixeia_kleidiou:"Στοιχεία κλειδιού", ena_kleidi:"Ένα κλειδί για όλες",
+    ena_kleidi_p:(e,s)=>"Το GlenApps Full ξεκλειδώνει το Pro σε όλες τις εφαρμογές: "+e+" € τον χρόνο αντί "+s+" €.",
+    exo_kleidi:"Έχω κλειδί / Τιμές", elikse:d=>"Το κλειδί σου έληξε στις "+d+".",
+    pro_ksekl:"✓ Pro ξεκλείδωτο", dorean_pro:"Δωρεάν + Pro",
+    lista_fortosi:"Η λίστα θα φορτωθεί μόλις υπάρξει σύνδεση στο διαδίκτυο.",
+    xoris_sindesi:"Χωρίς σύνδεση: θα ανοίξει μόνο αν την έχεις ανοίξει ξανά σε αυτό το κινητό.",
+    kleidi_afairethike:"Το κλειδί αφαιρέθηκε.", ksekleidothikan:"Ξεκλειδώθηκαν όλες οι εφαρμογές!",
+    egkat_mpike:"Το GlenApps μπήκε στην αρχική οθόνη!",
+    menu_egkat:"Άνοιξε το μενού του περιηγητή (⋮) και πάτα «Εγκατάσταση εφαρμογής» ή «Προσθήκη στην αρχική οθόνη».",
+    elegxos_tora:"Έλεγχος για νεότερη έκδοση…", exeis_teleutaia:v=>"Έχεις την τελευταία έκδοση ("+v+").",
+    nea_ekdosi_pilis:v=>"Νέα έκδοση "+v+" της πύλης", anavathmisi:"Αναβάθμιση",
+    elegxos_sindesi:"Ο έλεγχος χρειάζεται σύνδεση στο διαδίκτυο.",
+    to_kleidi_sou:"Το κλειδί σου", kleidi_glenapps:"Κλειδί GlenApps",
+    energo_eos_p:(d,e)=>"Ενεργό έως <b>"+d+"</b> για <b>"+e+"</b>.",
+    ksekleidonei_pro:"Ξεκλειδώνει το Pro σε όλες τις εφαρμογές της λίστας.",
+    ena_ksekleidonei:"Ένα κλειδί ξεκλειδώνει το Pro σε όλες τις εφαρμογές GlenApps, και σε όσες προστεθούν.",
+    full_1xronos:"GlenApps Full, 1 χρόνος", xorista_ana:"Χωριστά ανά εφαρμογή (τον χρόνο)",
+    synolo_xorista:"Σύνολο χωριστά", kathara:"Καθαρά πράγματα",
+    oroi1:"Το κλειδί ισχύει <b>1 χρόνο</b>, μέχρι την ημερομηνία που γράφει. Τη βλέπεις πάντα εδώ.",
+    oroi2:"<b>Δεν ανανεώνεται αυτόματα</b> και δεν γίνεται καμία χρέωση χωρίς να το ζητήσεις.",
+    oroi3:"Θα σε ειδοποιήσουμε 30 ημέρες πριν λήξει. Αν ανανεώσεις νωρίτερα, ο νέος χρόνος <b>προστίθεται</b> στη λήξη σου· δεν χάνεις μέρες.",
+    oroi4:"Αν χάσεις το κλειδί, σου ξαναστέλνουμε δωρεάν, με την <b>ίδια</b> ημερομηνία λήξης.",
+    oroi5:"Όταν λήξει, <b>τα δεδομένα σου μένουν όλα</b>· κλειδώνουν μόνο οι λειτουργίες Pro.",
+    email_agoras:"Ηλεκτρονικό ταχυδρομείο αγοράς", email_ph:"π.χ. onoma@gmail.com",
+    kleidi_l:"Κλειδί", kleisimo:"Κλείσιμο", afairesi_kleidiou:"Αφαίρεση κλειδιού",
+    energopoiisi:"Ενεργοποίηση", elegxos_btn:"Έλεγχος…",
+    confirm_afairesi:"Να αφαιρεθεί το κλειδί GlenApps από αυτό το κινητό;",
+    err_email:"Γράψε το ηλεκτρονικό ταχυδρομείο με το οποίο αγόρασες.",
+    err_morfi:"Το κλειδί δεν μοιάζει με κλειδί GlenApps (ξεκινά με GA2).",
+    err_tairiazei:"Το κλειδί δεν ταιριάζει με αυτό το ηλεκτρονικό ταχυδρομείο.",
+    err_liksi:"Αυτό το κλειδί έχει λήξει."
+  },
+  en:{
+    ypotitlos:"All your apps in one place",
+    enarxi_ypo:"All your apps, with one icon",
+    egkat_titlos:"Install on your phone",
+    egkat_keim:"Add GlenApps to your home screen: one icon, all your apps.",
+    egkat_iphone:"In Safari tap the Share button, then “Add to Home Screen”.",
+    egkat_koumpi:"Install", egkat_katalava:"Got it", oxi_tora:"Not now",
+    titlos_efarm:"The apps", elegxos:"Check for a newer version",
+    arxiki:"Home", xorista_k:"Separately", anoigei:"Opening…", anoigei_tin:n=>"Opening “"+n+"”…",
+    ekd:"v. ", ekdosi_kato:(v,b)=>"Version "+v+" · Updated "+b,
+    oles_ksekleid:"All apps unlocked",
+    full_eos:(d,m)=>"GlenApps Full until "+d+" · "+m+" days left",
+    lixei_sintoma:"Expiring soon — renew to keep going without interruption.",
+    stoixeia_kleidiou:"Key details", ena_kleidi:"One key for all",
+    ena_kleidi_p:(e,s)=>"GlenApps Full unlocks Pro in every app: "+e+" € a year instead of "+s+" €.",
+    exo_kleidi:"I have a key / Prices", elikse:d=>"Your key expired on "+d+".",
+    pro_ksekl:"✓ Pro unlocked", dorean_pro:"Free + Pro",
+    lista_fortosi:"The list will load once you're online.",
+    xoris_sindesi:"Offline: it will open only if you've opened it before on this phone.",
+    kleidi_afairethike:"The key was removed.", ksekleidothikan:"All apps unlocked!",
+    egkat_mpike:"GlenApps was added to your home screen!",
+    menu_egkat:"Open the browser menu (⋮) and tap “Install app” or “Add to Home screen”.",
+    elegxos_tora:"Checking for a newer version…", exeis_teleutaia:v=>"You have the latest version ("+v+").",
+    nea_ekdosi_pilis:v=>"New portal version "+v, anavathmisi:"Update",
+    elegxos_sindesi:"Checking needs an internet connection.",
+    to_kleidi_sou:"Your key", kleidi_glenapps:"GlenApps key",
+    energo_eos_p:(d,e)=>"Active until <b>"+d+"</b> for <b>"+e+"</b>.",
+    ksekleidonei_pro:"Unlocks Pro in every app on the list.",
+    ena_ksekleidonei:"One key unlocks Pro in all GlenApps apps, and any added later.",
+    full_1xronos:"GlenApps Full, 1 year", xorista_ana:"Separately per app (per year)",
+    synolo_xorista:"Total if bought separately", kathara:"Clear terms",
+    oroi1:"The key is valid for <b>1 year</b>, until the date shown. You can always see it here.",
+    oroi2:"It <b>does not auto-renew</b> and you are never charged without asking.",
+    oroi3:"We notify you 30 days before it expires. If you renew earlier, the new year is <b>added</b> to your expiry — you lose no days.",
+    oroi4:"If you lose the key, we resend it free, with the <b>same</b> expiry date.",
+    oroi5:"When it expires, <b>all your data stays</b> — only the Pro features lock.",
+    email_agoras:"Purchase email", email_ph:"e.g. name@gmail.com",
+    kleidi_l:"Key", kleisimo:"Close", afairesi_kleidiou:"Remove key",
+    energopoiisi:"Activate", elegxos_btn:"Checking…",
+    confirm_afairesi:"Remove the GlenApps key from this phone?",
+    err_email:"Enter the email you purchased with.",
+    err_morfi:"That doesn't look like a GlenApps key (it starts with GA2).",
+    err_tairiazei:"The key doesn't match this email.",
+    err_liksi:"This key has expired."
+  }
+};
+const T=(k,...a)=>{const v=(TR[GL]&&TR[GL][k]!=null?TR[GL][k]:TR.el[k]);return typeof v==="function"?v(...a):(v!=null?v:k)};
+function efarmoseGlossa(){
+  document.documentElement.lang=GL;
+  $("#glossaEtiketa").textContent=GL.toUpperCase();
+  const sp=$("#enarxi span");if(sp)sp.textContent=T("enarxi_ypo");
+  $("#ypotitlos").textContent=T("ypotitlos");
+  $("#titlosEfarm").textContent=T("titlos_efarm");
+  $("#koumpiElegxos").textContent=T("elegxos");
+  $("#spitiEt").textContent=T("arxiki");
+  $("#exoEt").textContent=T("xorista_k");
+  $("#fortosiKeim").textContent=T("anoigei");
+  $("#ekdosiEtiketa").textContent=T("ekd")+APP_VERSION;
+  $("#ekdosiKato").textContent=T("ekdosi_kato",APP_VERSION,APP_BUILD);
+  kartaEgkat(); zografise();
+}
+$("#koumpiGlossa").onclick=()=>{
+  GL=(GL==="el")?"en":"el"; apothiki.vale(GL_KEY,GL);
+  efarmoseGlossa();
+  // ξαναφόρτωσε τις ανοιχτές εφαρμογές ώστε να πάρουν τη νέα γλώσσα
+  plaisia.forEach(f=>f.remove()); plaisia.clear();
+  if(trexousa){const i=(DATA.efarmoges||[]).findIndex(a=>a.id===trexousa.id);const t=trexousa;trexousa=null;if(i>=0)anoixeEfarmogi(i,true);else piseStinArxiki(true);}
+  minima(GL==="el"?"Γλώσσα: Ελληνικά":"Language: English");
+};
+// προσθέτει ?gl=<γλώσσα> στη διεύθυνση της εφαρμογής
+function meGlossa(url){try{const u=new URL(url,location.href);u.searchParams.set("gl",GL);return u.toString();}catch{return url+(url.includes("?")?"&":"?")+"gl="+GL;}}
 
 /* ---------- Λίστα εφαρμογών (από το κοινό αρχείο) ---------- */
 const PROEPILOGI={paketo:{timi_etos:99,timi_2etia:169,athroisma_xorista:120},efarmoges:[]};
@@ -293,14 +417,14 @@ function zografiseKleidi(){
   if(KATASTASI.energo){
     k.className="kleidi energo";
     k.innerHTML=`<div class="pano"><div class="simadi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
-      <div><h2>Όλες οι εφαρμογές ξεκλειδωμένες</h2><p>GlenApps Full έως ${imerominia(KATASTASI.eos)} · ${KATASTASI.meres} ημέρες ακόμα</p>${KATASTASI.meres<=30?`<p class="proeid">Λήγει σύντομα — ανανέωσε για να συνεχίσει χωρίς διακοπή.</p>`:""}</div></div>
-      <button class="k-aplo" style="margin-top:12px;width:100%" id="koumpiKleidi">Στοιχεία κλειδιού</button>`;
+      <div><h2>${T("oles_ksekleid")}</h2><p>${T("full_eos",imerominia(KATASTASI.eos),KATASTASI.meres)}</p>${KATASTASI.meres<=30?`<p class="proeid">${T("lixei_sintoma")}</p>`:""}</div></div>
+      <button class="k-aplo" style="margin-top:12px;width:100%" id="koumpiKleidi">${T("stoixeia_kleidiou")}</button>`;
   }else{
     k.className="kleidi";
-    const elixe=KATASTASI.elixe?`<p class="lathos">Το κλειδί σου έληξε στις ${imerominia(KATASTASI.eos)}.</p>`:"";
+    const elixe=KATASTASI.elixe?`<p class="lathos">${T("elikse",imerominia(KATASTASI.eos))}</p>`:"";
     k.innerHTML=`<div class="pano"><div class="simadi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17324D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-      <div><h2>Ένα κλειδί για όλες</h2><p>Το GlenApps Full ξεκλειδώνει το Pro σε όλες τις εφαρμογές: ${p.timi_etos} € τον χρόνο αντί ${p.athroisma_xorista} €.</p></div></div>
-      ${elixe}<button class="koumpi-ble" id="koumpiKleidi">Έχω κλειδί / Τιμές</button>`;
+      <div><h2>${T("ena_kleidi")}</h2><p>${T("ena_kleidi_p",p.timi_etos,p.athroisma_xorista)}</p></div></div>
+      ${elixe}<button class="koumpi-ble" id="koumpiKleidi">${T("exo_kleidi")}</button>`;
   }
   $("#koumpiKleidi").onclick=anoixeKleidi;
 }
@@ -310,10 +434,10 @@ function zografise(){
   $("#plakidia").innerHTML=(DATA.efarmoges||[]).map((a,i)=>`
     <button class="plakidio" data-i="${i}">
       ${eikonidioHTML(a)}
-      <b>${esc(a.onoma)}</b>
-      <span>${esc(a.perigrafi)}</span>
-      <em class="etiketa ${pro?"pro":""}" style="font-style:normal">${pro?"✓ Pro ξεκλείδωτο":"Δωρεάν + Pro"}</em>
-    </button>`).join("")||`<p style="grid-column:1/-1;color:var(--apalo)">Η λίστα θα φορτωθεί μόλις υπάρξει σύνδεση στο διαδίκτυο.</p>`;
+      <b>${esc(a["onoma_"+GL]||a.onoma)}</b>
+      <span>${esc(a["perigrafi_"+GL]||a.perigrafi)}</span>
+      <em class="etiketa ${pro?"pro":""}" style="font-style:normal">${pro?T("pro_ksekl"):T("dorean_pro")}</em>
+    </button>`).join("")||`<p style="grid-column:1/-1;color:var(--apalo)">${T("lista_fortosi")}</p>`;
   document.querySelectorAll(".plakidio").forEach(b=>b.onclick=()=>anoixeEfarmogi(+b.dataset.i));
   xtiseBara();
   simeioseEnergi();
@@ -335,7 +459,7 @@ function apothikeuseSeira(){
 let molisSyrthike=false;
 function xtiseBara(){
   const l=$("#kateListat");
-  l.innerHTML=taksinomimeni().map(({a,i})=>`<button class="efarm" data-i="${i}" data-id="${esc(a.id)}">${eikonidioHTML(a)}<span>${esc(a.onoma)}</span></button>`).join("");
+  l.innerHTML=taksinomimeni().map(({a,i})=>`<button class="efarm" data-i="${i}" data-id="${esc(a.id)}">${eikonidioHTML(a)}<span>${esc(a["onoma_"+GL]||a.onoma)}</span></button>`).join("");
   l.querySelectorAll(".efarm").forEach(b=>{
     b.onclick=()=>{if(molisSyrthike){molisSyrthike=false;return}anoixeEfarmogi(+b.dataset.i,true)};
     let holdT=null,sernei=false,kinithike=false,sx=0,sy=0;
@@ -384,7 +508,7 @@ const MEGISTO=3;
 let trexousa=null;
 function anoixeEfarmogi(i,apoBara){
   const a=(DATA.efarmoges||[])[i]; if(!a)return;
-  if(!navigator.onLine&&!plaisia.has(a.id))minima("Χωρίς σύνδεση: θα ανοίξει μόνο αν την έχεις ανοίξει ξανά σε αυτό το κινητό.");
+  if(!navigator.onLine&&!plaisia.has(a.id))minima(T("xoris_sindesi"));
   $("#arxiki").setAttribute("aria-hidden","true");
   $("#provoli").classList.remove("krypto");
   if(!trexousa||!apoBara)history.pushState({efarmogi:a.id},"","#"+a.id);
@@ -393,11 +517,11 @@ function anoixeEfarmogi(i,apoBara){
   plaisia.forEach((f,id)=>f.style.visibility=id===a.id?"visible":"hidden");
   let f=plaisia.get(a.id);
   if(!f){
-    $("#fortosiEik").src=a.eikonidio;$("#fortosiKeim").textContent="Ανοίγει το «"+a.onoma+"»…";$("#fortosi").classList.remove("krypto");
+    $("#fortosiEik").src=a.eikonidio;$("#fortosiKeim").textContent=T("anoigei_tin",a["onoma_"+GL]||a.onoma);$("#fortosi").classList.remove("krypto");
     f=document.createElement("iframe");
     f.title=a.onoma;
     f.allow="geolocation; camera; microphone; clipboard-read; clipboard-write; fullscreen; web-share; screen-wake-lock";
-    f.src=a.dieuthinsi;
+    f.src=meGlossa(a.dieuthinsi);
     f.onload=()=>{if(trexousa&&trexousa.id===a.id)$("#fortosi").classList.add("krypto")};
     $("#plaisia").appendChild(f);
     plaisia.set(a.id,f);
@@ -419,7 +543,7 @@ function piseStinArxiki(apoIstoriko){
   elegxeKleidi().then(zografise);   // μπορεί να άλλαξε το κλειδί μέσα σε κάποια εφαρμογή
 }
 $("#koumpiSpiti").onclick=()=>piseStinArxiki(false);
-$("#koumpiExo").onclick=()=>{if(trexousa)window.open(trexousa.dieuthinsi,"_blank")};
+$("#koumpiExo").onclick=()=>{if(trexousa)window.open(meGlossa(trexousa.dieuthinsi),"_blank")};
 window.addEventListener("popstate",e=>{
   const id=e.state&&e.state.efarmogi;
   if(id){const i=DATA.efarmoges.findIndex(a=>a.id===id);if(i>=0){anoixeEfarmogi(i,true);return}}
@@ -429,37 +553,37 @@ window.addEventListener("popstate",e=>{
 /* ---------- Παράθυρο κλειδιού ---------- */
 function anoixeKleidi(){
   const p=DATA.paketo||PROEPILOGI.paketo;
-  const xorista=(DATA.efarmoges||[]).map(a=>`<div class="grammi"><span>${esc(a.onoma)}</span><span>${esc(a.timi||"")}</span></div>`).join("");
+  const xorista=(DATA.efarmoges||[]).map(a=>`<div class="grammi"><span>${esc(a["onoma_"+GL]||a.onoma)}</span><span>${esc(a.timi||"")}</span></div>`).join("");
   const s=document.createElement("div");s.className="skia";
   const energo=KATASTASI.energo;
   s.innerHTML=`<div class="fyllo" role="dialog" aria-modal="true">
-    <h2>${energo?"Το κλειδί σου":"Κλειδί GlenApps"}</h2>
-    ${energo?`<p>Ενεργό έως <b>${imerominia(KATASTASI.eos)}</b> για <b>${esc(KATASTASI.email)}</b>.</p><p>Ξεκλειδώνει το Pro σε όλες τις εφαρμογές της λίστας.</p>`
-      :`<p>Ένα κλειδί ξεκλειδώνει το Pro σε όλες τις εφαρμογές GlenApps, και σε όσες προστεθούν.</p>`}
+    <h2>${energo?T("to_kleidi_sou"):T("kleidi_glenapps")}</h2>
+    ${energo?`<p>${T("energo_eos_p",imerominia(KATASTASI.eos),esc(KATASTASI.email))}</p><p>${T("ksekleidonei_pro")}</p>`
+      :`<p>${T("ena_ksekleidonei")}</p>`}
     <div class="timokatalogos">
-      <div class="grammi megali"><span>GlenApps Full, 1 χρόνος</span><span>${p.timi_etos} €</span></div>
-      <hr><div class="grammi" style="font-weight:700"><span>Χωριστά ανά εφαρμογή (τον χρόνο)</span><span></span></div>
+      <div class="grammi megali"><span>${T("full_1xronos")}</span><span>${p.timi_etos} €</span></div>
+      <hr><div class="grammi" style="font-weight:700"><span>${T("xorista_ana")}</span><span></span></div>
       ${xorista}
-      <hr><div class="grammi" style="font-weight:700"><span>Σύνολο χωριστά</span><span>${p.athroisma_xorista} €</span></div>
+      <hr><div class="grammi" style="font-weight:700"><span>${T("synolo_xorista")}</span><span>${p.athroisma_xorista} €</span></div>
     </div>
     <div class="oroi">
-      <b>Καθαρά πράγματα</b>
+      <b>${T("kathara")}</b>
       <ul>
-        <li>Το κλειδί ισχύει <b>1 χρόνο</b>, μέχρι την ημερομηνία που γράφει. Τη βλέπεις πάντα εδώ.</li>
-        <li><b>Δεν ανανεώνεται αυτόματα</b> και δεν γίνεται καμία χρέωση χωρίς να το ζητήσεις.</li>
-        <li>Θα σε ειδοποιήσουμε 30 ημέρες πριν λήξει. Αν ανανεώσεις νωρίτερα, ο νέος χρόνος <b>προστίθεται</b> στη λήξη σου· δεν χάνεις μέρες.</li>
-        <li>Αν χάσεις το κλειδί, σου ξαναστέλνουμε δωρεάν, με την <b>ίδια</b> ημερομηνία λήξης.</li>
-        <li>Όταν λήξει, <b>τα δεδομένα σου μένουν όλα</b>· κλειδώνουν μόνο οι λειτουργίες Pro.</li>
+        <li>${T("oroi1")}</li>
+        <li>${T("oroi2")}</li>
+        <li>${T("oroi3")}</li>
+        <li>${T("oroi4")}</li>
+        <li>${T("oroi5")}</li>
       </ul>
     </div>
-    ${energo?"":`<label for="kEmail">Ηλεκτρονικό ταχυδρομείο αγοράς</label>
-    <input id="kEmail" type="email" inputmode="email" autocomplete="email" placeholder="π.χ. onoma@gmail.com">
-    <label for="kKleidi">Κλειδί</label>
+    ${energo?"":`<label for="kEmail">${T("email_agoras")}</label>
+    <input id="kEmail" type="email" inputmode="email" autocomplete="email" placeholder="${T("email_ph")}">
+    <label for="kKleidi">${T("kleidi_l")}</label>
     <input id="kKleidi" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="GA2-…">
     <p id="kLathos" class="lathos krypto"></p>`}
     <div class="seira">
-      <button class="k-aplo" id="kKleise">Κλείσιμο</button>
-      ${energo?`<button class="k-aplo" id="kAfairesi">Αφαίρεση κλειδιού</button>`:`<button class="koumpi-ble" id="kEnergo">Ενεργοποίηση</button>`}
+      <button class="k-aplo" id="kKleise">${T("kleisimo")}</button>
+      ${energo?`<button class="k-aplo" id="kAfairesi">${T("afairesi_kleidiou")}</button>`:`<button class="koumpi-ble" id="kEnergo">${T("energopoiisi")}</button>`}
     </div>
   </div>`;
   document.body.appendChild(s);
@@ -467,20 +591,20 @@ function anoixeKleidi(){
   s.onclick=e=>{if(e.target===s)kleise()};
   s.querySelector("#kKleise").onclick=kleise;
   const af=s.querySelector("#kAfairesi");
-  if(af)af.onclick=()=>{if(confirm("Να αφαιρεθεί το κλειδί GlenApps από αυτό το κινητό;")){apothiki.svise(KLEIDI_KOINO);kleise();elegxeKleidi().then(zografise);minima("Το κλειδί αφαιρέθηκε.")}};
+  if(af)af.onclick=()=>{if(confirm(T("confirm_afairesi"))){apothiki.svise(KLEIDI_KOINO);kleise();elegxeKleidi().then(zografise);minima(T("kleidi_afairethike"))}};
   const en=s.querySelector("#kEnergo");
   if(en)en.onclick=async()=>{
     const email=s.querySelector("#kEmail").value,kl=s.querySelector("#kKleidi").value,l=s.querySelector("#kLathos");
     const lathos=t=>{l.textContent=t;l.classList.remove("krypto")};
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(kanoniko(email)))return lathos("Γράψε το ηλεκτρονικό ταχυδρομείο με το οποίο αγόρασες.");
-    if(!analyseKleidi(kl))return lathos("Το κλειδί δεν μοιάζει με κλειδί GlenApps (ξεκινά με GA2).");
-    en.disabled=true;en.textContent="Έλεγχος…";
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(kanoniko(email)))return lathos(T("err_email"));
+    if(!analyseKleidi(kl))return lathos(T("err_morfi"));
+    en.disabled=true;en.textContent=T("elegxos_btn");
     const v=await epalitheuse(email,kl);
-    en.disabled=false;en.textContent="Ενεργοποίηση";
-    if(!v)return lathos("Το κλειδί δεν ταιριάζει με αυτό το ηλεκτρονικό ταχυδρομείο.");
-    if(meresMexri(v.eos)<=0)return lathos("Αυτό το κλειδί έχει λήξει.");
+    en.disabled=false;en.textContent=T("energopoiisi");
+    if(!v)return lathos(T("err_tairiazei"));
+    if(meresMexri(v.eos)<=0)return lathos(T("err_liksi"));
     apothiki.vale(KLEIDI_KOINO,{...v,energopoiithike:new Date().toISOString()});
-    kleise();await elegxeKleidi();zografise();minima("Ξεκλειδώθηκαν όλες οι εφαρμογές!");
+    kleise();await elegxeKleidi();zografise();minima(T("ksekleidothikan"));
   };
 }
 
@@ -492,20 +616,23 @@ function kartaEgkat(){
   const k=$("#kartaEgkat");
   if(egkatestimeni()||apothiki.pare(EGKAT_OXI)>Date.now()){k.classList.add("krypto");return}
   k.classList.remove("krypto");
-  if(iphone){$("#egkatKeimeno").textContent="Στο Safari πάτα το κουμπί Κοινοποίηση και μετά «Προσθήκη στην οθόνη Αφετηρίας».";$("#koumpiEgkat").textContent="Κατάλαβα"}
+  $("#kartaEgkat").querySelector("h2").textContent=T("egkat_titlos");
+  if(iphone){$("#egkatKeimeno").textContent=T("egkat_iphone");$("#koumpiEgkat").textContent=T("egkat_katalava")}
+  else{$("#egkatKeimeno").textContent=T("egkat_keim");$("#koumpiEgkat").textContent=T("egkat_koumpi")}
+  $("#koumpiOxiTora").textContent=T("oxi_tora");
 }
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();protasiEgkat=e;kartaEgkat()});
-window.addEventListener("appinstalled",()=>{protasiEgkat=null;$("#kartaEgkat").classList.add("krypto");minima("Το GlenApps μπήκε στην αρχική οθόνη!")});
+window.addEventListener("appinstalled",()=>{protasiEgkat=null;$("#kartaEgkat").classList.add("krypto");minima(T("egkat_mpike"))});
 $("#koumpiEgkat").onclick=async()=>{
   if(iphone){$("#kartaEgkat").classList.add("krypto");return}
   if(protasiEgkat){protasiEgkat.prompt();try{await protasiEgkat.userChoice}catch{}protasiEgkat=null;return}
-  minima("Άνοιξε το μενού του περιηγητή (⋮) και πάτα «Εγκατάσταση εφαρμογής» ή «Προσθήκη στην αρχική οθόνη».");
+  minima(T("menu_egkat"));
 };
 $("#koumpiOxiTora").onclick=()=>{apothiki.vale(EGKAT_OXI,Date.now()+7*864e5);$("#kartaEgkat").classList.add("krypto")};
 
 /* ---------- Έκδοση και αυτόματη αναβάθμιση ---------- */
-$("#ekdosiEtiketa").textContent="έκδ. "+APP_VERSION;
-$("#ekdosiKato").textContent="Έκδοση "+APP_VERSION+" · Ανέβηκε "+APP_BUILD;
+$("#ekdosiEtiketa").textContent=T("ekd")+APP_VERSION;
+$("#ekdosiKato").textContent=T("ekdosi_kato",APP_VERSION,APP_BUILD);
 async function anavathmise(){
   try{const r=await navigator.serviceWorker?.getRegistration();if(r)await r.update();const c=await caches.keys();await Promise.all(c.map(k=>caches.delete(k)))}catch{}
   setTimeout(()=>location.replace(location.origin+location.pathname+"?v="+Date.now()),300);
@@ -514,19 +641,19 @@ function bariaNeaEkdosi(v){
   if(!trexousa){anavathmise();return}         // στην αρχική: αναβαθμίζεται μόνη της
   if($("#neaEkdosi"))return;
   const d=document.createElement("div");d.id="neaEkdosi";
-  d.innerHTML=`<span>Νέα έκδοση ${esc(v)} της πύλης</span><button class="k-kitrino">Αναβάθμιση</button>`;
+  d.innerHTML=`<span>${esc(T("nea_ekdosi_pilis",v))}</span><button class="k-kitrino">${T("anavathmisi")}</button>`;
   d.querySelector("button").onclick=anavathmise;document.body.appendChild(d);
 }
 let teleutaiosElegxos=0;
 async function elegxosEkdosis(siopila){
   if(siopila){const t=Date.now();if(t-teleutaiosElegxos<6e4)return;teleutaiosElegxos=t}
-  if(!siopila)minima("Έλεγχος για νεότερη έκδοση…");
+  if(!siopila)minima(T("elegxos_tora"));
   try{
     const html=await(await fetch(location.pathname+"?probe="+Date.now(),{cache:"no-store"})).text();
     const m=html.match(/<meta name="app-version" content="([^"]+)"/);
     if(m&&m[1]!==APP_VERSION){bariaNeaEkdosi(m[1]);return}
-    if(!siopila)minima("Έχεις την τελευταία έκδοση ("+APP_VERSION+").");
-  }catch{if(!siopila)minima("Ο έλεγχος χρειάζεται σύνδεση στο διαδίκτυο.")}
+    if(!siopila)minima(T("exeis_teleutaia",APP_VERSION));
+  }catch{if(!siopila)minima(T("elegxos_sindesi"))}
 }
 $("#koumpiElegxos").onclick=()=>elegxosEkdosis(false);
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"){elegxosEkdosis(true);if(!trexousa)elegxeKleidi().then(zografise)}});
@@ -536,9 +663,8 @@ window.addEventListener("focus",()=>elegxosEkdosis(true));
 if("serviceWorker"in navigator&&/^https?:$/.test(location.protocol))navigator.serviceWorker.register("sw.js").catch(()=>{});
 (async()=>{
   await elegxeKleidi();
-  zografise();
+  efarmoseGlossa();   // θέτει γλώσσα + καλεί kartaEgkat + zografise
   efarmoseBaraKatastasi();
-  kartaEgkat();
   fortoseLista();
   setTimeout(()=>{$("#enarxi").classList.add("svinei");setTimeout(()=>$("#enarxi").remove(),500)},1100);
   // αν άνοιξε με #εφαρμογή (π.χ. μετά από ανανέωση), την ξανανοίγουμε
