@@ -1,11 +1,11 @@
 /*
   GlenApps
-  © 2026 Ανδρέας Μ. Γλεντζάκης (Andreas M. Glentzakis). Με την επιφύλαξη παντός δικαιώματος.
+  © 20.7 Ανδρέας Μ. Γλεντζάκης (Andreas M. Glentzakis). Με την επιφύλαξη παντός δικαιώματος.
 */
-const CACHE="glenapps-0.6";
+const CACHE="glenapps-0.7";
 const SHELL=["./","./index.html","./manifest.json","./efarmoges.json",
-  "./eikonidia/icon-192.png?v=0.6","./eikonidia/icon-512.png?v=0.6","./eikonidia/icon-512-maskable.png?v=0.6",
-  "./eikonidia/apple-touch-icon.png?v=0.6","./eikonidia/G-glenapps.png?v=0.6"];
+  "./eikonidia/icon-192.png?v=0.7","./eikonidia/icon-512.png?v=0.7","./eikonidia/icon-512-maskable.png?v=0.7",
+  "./eikonidia/apple-touch-icon.png?v=0.7","./eikonidia/G-glenapps.png?v=0.7"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})))))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n.startsWith("glenapps-")&&n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim()))});
 self.addEventListener("message",e=>{if(e.data&&e.data.type==="skipWaiting")self.skipWaiting()});

@@ -15,12 +15,12 @@
       "timi": "29 € τον χρόνο"
     },
     {
-      "id": "kontamou",
-      "onoma": "Κοντά μου",
-      "dieuthinsi": "https://aglentzakis-dot.github.io/kontamou/",
-      "eikonidio": "https://aglentzakis-dot.github.io/kontamou/icon-192.png",
-      "perigrafi": "Βρες μάστορες και επαγγελματίες πάνω στον χάρτη, κοντά σου.",
-      "timi": "μαζί με το Δρομολόγιο"
+      "id": "paraggelies",
+      "onoma": "Παραγγελίες",
+      "dieuthinsi": "https://aglentzakis-dot.github.io/paraggelies/",
+      "eikonidio": "https://aglentzakis-dot.github.io/paraggelies/icon-192.png",
+      "perigrafi": "Οι πελάτες σου παραγγέλνουν με έναν σύνδεσμο, εσύ τα βλέπεις όλα μαζεμένα.",
+      "timi": "49 € τον χρόνο"
     },
     {
       "id": "tameia",
@@ -31,20 +31,20 @@
       "timi": "15 € τον χρόνο"
     },
     {
+      "id": "kontamou",
+      "onoma": "Κοντά μου",
+      "dieuthinsi": "https://aglentzakis-dot.github.io/kontamou/",
+      "eikonidio": "https://aglentzakis-dot.github.io/kontamou/icon-192.png",
+      "perigrafi": "Βρες μάστορες και επαγγελματίες πάνω στον χάρτη, κοντά σου.",
+      "timi": "μαζί με το Δρομολόγιο"
+    },
+    {
       "id": "imerologio",
       "onoma": "Ημερολόγιο",
       "dieuthinsi": "https://aglentzakis-dot.github.io/imerologio/",
       "eikonidio": "https://aglentzakis-dot.github.io/imerologio/icon-192.png",
       "perigrafi": "Τα ραντεβού των πελατών σου οργανωμένα, για κάθε επάγγελμα.",
       "timi": "15 € τον χρόνο"
-    },
-    {
-      "id": "paraggelies",
-      "onoma": "Παραγγελίες",
-      "dieuthinsi": "https://aglentzakis-dot.github.io/paraggelies/",
-      "eikonidio": "https://aglentzakis-dot.github.io/paraggelies/icon-192.png",
-      "perigrafi": "Οι πελάτες σου παραγγέλνουν με έναν σύνδεσμο, εσύ τα βλέπεις όλα μαζεμένα.",
-      "timi": "49 € τον χρόνο"
     },
     {
       "id": "glenread",
