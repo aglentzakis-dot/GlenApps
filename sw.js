@@ -2,7 +2,7 @@
   GlenApps
   © 2026 Ανδρέας Μ. Γλεντζάκης (Andreas M. Glentzakis). Με την επιφύλαξη παντός δικαιώματος.
 */
-const CACHE="glenapps-0.9";
+const CACHE="glenapps-0.10";
 const SHELL=["./","./index.html","./manifest.json","./efarmoges.json",
   "./eikonidia/icon-192.png?v=0.9","./eikonidia/icon-512.png?v=0.9","./eikonidia/icon-512-maskable.png?v=0.9",
   "./eikonidia/apple-touch-icon.png?v=0.9","./eikonidia/G-glenapps.png?v=0.9"];

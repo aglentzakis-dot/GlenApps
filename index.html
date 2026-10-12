@@ -216,8 +216,8 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.9";
-const APP_BUILD="11/10/2026";
+const APP_VERSION="0.10";
+const APP_BUILD="12/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
 const EGKAT_OXI="glenapps-egkat-oxi";
@@ -356,7 +356,7 @@ $("#koumpiGlossa").onclick=()=>{
 function meGlossa(url){try{const u=new URL(url,location.href);u.searchParams.set("gl",GL);return u.toString();}catch{return url+(url.includes("?")?"&":"?")+"gl="+GL;}}
 
 /* ---------- Λίστα εφαρμογών (από το κοινό αρχείο) ---------- */
-const PROEPILOGI={paketo:{timi_etos:99,timi_2etia:169,athroisma_xorista:120},efarmoges:[]};
+const PROEPILOGI={paketo:{timi_etos:99,athroisma_xorista:123},efarmoges:[]};
 let DATA=apothiki.pare(LISTA_TOPIKA)||PROEPILOGI;
 async function fortoseLista(){
   try{

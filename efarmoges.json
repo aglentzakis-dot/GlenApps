@@ -3,7 +3,7 @@
   "paketo": {
     "onoma": "GlenApps Full — όλες οι εφαρμογές, ένα κλειδί",
     "timi_etos": 99,
-    "athroisma_xorista": 120
+    "athroisma_xorista": 123
   },
   "efarmoges": [
     {
@@ -23,12 +23,20 @@
       "timi": "μαζί με το Δρομολόγιο"
     },
     {
+      "id": "fotometra",
+      "onoma": "ΦωτοΜέτρα",
+      "dieuthinsi": "https://aglentzakis-dot.github.io/fotometra/",
+      "eikonidio": "https://aglentzakis-dot.github.io/fotometra/icon-192.png",
+      "perigrafi": "Σημειώσεις, ίσιες γραμμές και διαστάσεις πάνω στις φωτογραφίες σου.",
+      "timi": "μαζί με το Δρομολόγιο · χωριστά 12 €"
+    },
+    {
       "id": "paraggelies",
       "onoma": "Παραγγελίες",
       "dieuthinsi": "https://aglentzakis-dot.github.io/paraggelies/",
       "eikonidio": "https://aglentzakis-dot.github.io/paraggelies/icon-192.png",
       "perigrafi": "Οι πελάτες σου παραγγέλνουν με έναν σύνδεσμο, εσύ τα βλέπεις όλα μαζεμένα.",
-      "timi": "49 € τον χρόνο"
+      "timi": "79 € τον χρόνο (προσφορά 49 € τον 1ο)"
     },
     {
       "id": "tameia",
@@ -36,7 +44,7 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/tameia/",
       "eikonidio": "https://aglentzakis-dot.github.io/tameia/icon-192.png",
       "perigrafi": "Έσοδα και έξοδα για το σπίτι, την επιχείρηση και τα κοινόχρηστα.",
-      "timi": "15 € τον χρόνο"
+      "timi": "15 € τον χρόνο · Κοινόχρηστα χωριστά"
     },
     {
       "id": "imerologio",
@@ -44,7 +52,7 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/imerologio/",
       "eikonidio": "https://aglentzakis-dot.github.io/imerologio/icon-192.png",
       "perigrafi": "Τα ραντεβού των πελατών σου οργανωμένα, για κάθε επάγγελμα.",
-      "timi": "15 € τον χρόνο"
+      "timi": "δωρεάν"
     },
     {
       "id": "glenread",
@@ -52,7 +60,7 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/GlenRead/",
       "eikonidio": "https://aglentzakis-dot.github.io/GlenRead/icon-192.png",
       "perigrafi": "Διάβασε και αναγνώρισε τα έγγραφα PDF σου εύκολα από το κινητό.",
-      "timi": "6 € τον χρόνο"
+      "timi": "δωρεάν"
     },
     {
       "id": "ergaleiothiki",
@@ -60,7 +68,7 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/ergaleiothiki/",
       "eikonidio": "https://aglentzakis-dot.github.io/ergaleiothiki/icon-192.png",
       "perigrafi": "Αλφάδι, μετρήσεις και υπολογισμοί υλικών για κάθε μάστορα.",
-      "timi": "6 € τον χρόνο"
+      "timi": "δωρεάν"
     }
   ]
 }
