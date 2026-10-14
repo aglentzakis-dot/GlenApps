@@ -6,7 +6,7 @@
     "kontamou":      { "timi": 0,  "simeiosi": "μαζί με το Δρομολόγιο", "prosfora": null },
     "paraggelies":   { "timi": 79, "simeiosi": "", "prosfora": { "timi": 49, "etiketa": "Προσφορά λανσαρίσματος (1ος χρόνος)" } },
     "tameia":        { "timi": 15, "simeiosi": "Κοινόχρηστα χωριστά", "prosfora": null },
-    "imerologio":    { "timi": 0,  "simeiosi": "", "prosfora": null },
+    "imerologio":    { "timi": 15, "simeiosi": "κρατήσεις από πελάτες · 1 αποστολή δωρεάν", "prosfora": null },
     "glenread":      { "timi": 0,  "simeiosi": "", "prosfora": null },
     "ergaleiothiki": { "timi": 0,  "simeiosi": "", "prosfora": null },
     "fotometra":     { "timi": 12, "simeiosi": "δωρεάν με το Δρομολόγιο", "prosfora": null }
