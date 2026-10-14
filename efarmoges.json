@@ -23,14 +23,6 @@
       "timi": "μαζί με το Δρομολόγιο"
     },
     {
-      "id": "fotometra",
-      "onoma": "ΦωτοΜέτρα",
-      "dieuthinsi": "https://aglentzakis-dot.github.io/fotometra/",
-      "eikonidio": "https://aglentzakis-dot.github.io/fotometra/icon-192.png",
-      "perigrafi": "Σημειώσεις, ίσιες γραμμές και διαστάσεις πάνω στις φωτογραφίες σου.",
-      "timi": "μαζί με το Δρομολόγιο · χωριστά 12 €"
-    },
-    {
       "id": "paraggelies",
       "onoma": "Παραγγελίες",
       "dieuthinsi": "https://aglentzakis-dot.github.io/paraggelies/",
@@ -69,6 +61,14 @@
       "eikonidio": "https://aglentzakis-dot.github.io/ergaleiothiki/icon-192.png",
       "perigrafi": "Αλφάδι, μετρήσεις και υπολογισμοί υλικών για κάθε μάστορα.",
       "timi": "δωρεάν"
+    },
+    {
+      "id": "fotometra",
+      "onoma": "ΦωτοΜέτρα",
+      "dieuthinsi": "https://aglentzakis-dot.github.io/fotometra/",
+      "eikonidio": "https://aglentzakis-dot.github.io/fotometra/icon-192.png",
+      "perigrafi": "Σημειώσεις, ίσιες γραμμές και διαστάσεις πάνω στις φωτογραφίες σου.",
+      "timi": "μαζί με το Δρομολόγιο · χωριστά 12 €"
     }
   ]
 }
