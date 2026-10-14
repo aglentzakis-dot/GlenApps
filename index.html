@@ -8,13 +8,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.13">
+<meta name="app-version" content="0.14">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.13">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.13">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.14">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.14">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -148,7 +148,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.13" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.14" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -159,7 +159,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.13" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.14" x="11" y="8.5" width="22" height="22"/>
     </svg>
     <div><h1>GlenApps</h1><small id="ypotitlos">Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
     <button class="glossaKoumpi" id="koumpiGlossa" aria-label="Γλώσσα / Language">🌐 <span id="glossaEtiketa">EL</span></button>
@@ -168,7 +168,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.13" alt="">
+      <img src="eikonidia/icon-192.png?v=0.14" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -216,7 +216,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.13";
+const APP_VERSION="0.14";
 const APP_BUILD="14/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
@@ -254,7 +254,7 @@ const TR={
     stoixeia_kleidiou:"Στοιχεία κλειδιού", ena_kleidi:"Ένα κλειδί για όλες",
     ena_kleidi_p:(e,s)=>"Το GlenApps Full ξεκλειδώνει το Pro σε όλες τις εφαρμογές: "+e+" € τον χρόνο αντί "+s+" €.",
     exo_kleidi:"Έχω κλειδί / Τιμές", elikse:d=>"Το κλειδί σου έληξε στις "+d+".",
-    pro_ksekl:"✓ Pro ξεκλείδωτο", dorean_pro:"Δωρεάν + Pro",
+    pro_ksekl:"✓ Pro ξεκλείδωτο", dorean_pro:"Δωρεάν + Pro", dorean:"Δωρεάν",
     lista_fortosi:"Η λίστα θα φορτωθεί μόλις υπάρξει σύνδεση στο διαδίκτυο.",
     xoris_sindesi:"Χωρίς σύνδεση: θα ανοίξει μόνο αν την έχεις ανοίξει ξανά σε αυτό το κινητό.",
     kleidi_afairethike:"Το κλειδί αφαιρέθηκε.", ksekleidothikan:"Ξεκλειδώθηκαν όλες οι εφαρμογές!",
@@ -299,7 +299,7 @@ const TR={
     stoixeia_kleidiou:"Key details", ena_kleidi:"One key for all",
     ena_kleidi_p:(e,s)=>"GlenApps Full unlocks Pro in every app: "+e+" € a year instead of "+s+" €.",
     exo_kleidi:"I have a key / Prices", elikse:d=>"Your key expired on "+d+".",
-    pro_ksekl:"✓ Pro unlocked", dorean_pro:"Free + Pro",
+    pro_ksekl:"✓ Pro unlocked", dorean_pro:"Free + Pro", dorean:"Free",
     lista_fortosi:"The list will load once you're online.",
     xoris_sindesi:"Offline: it will open only if you've opened it before on this phone.",
     kleidi_afairethike:"The key was removed.", ksekleidothikan:"All apps unlocked!",
@@ -358,12 +358,32 @@ function meGlossa(url){try{const u=new URL(url,location.href);u.searchParams.set
 /* ---------- Λίστα εφαρμογών (από το κοινό αρχείο) ---------- */
 const PROEPILOGI={paketo:{timi_etos:99,athroisma_xorista:123},efarmoges:[]};
 let DATA=apothiki.pare(LISTA_TOPIKA)||PROEPILOGI;
+
+/* ---------- Κοινές τιμές & προσφορές (μία πηγή αλήθειας: koina.json) ---------- */
+const KOINA_TOPIKA="glenapps-koina";
+const KOINA_DEF={paketo:{timi:99,prosfora:null},times:{}};
+let KOINA=apothiki.pare(KOINA_TOPIKA)||KOINA_DEF;
+function timiInfo(o){o=o||{};const base=+o.timi||0;const of=(o.prosfora&&o.prosfora.timi!=null)?+o.prosfora.timi:null;return{base,of,eff:of!=null?of:base,etiketa:(o.prosfora&&o.prosfora.etiketa)||"",simeiosi:o.simeiosi||""};}
+function timiApp(id){return timiInfo((KOINA.times||{})[id]);}
+function timiPaketo(){return timiInfo(KOINA.paketo||{});}
+function synoloXorista(){return (DATA.efarmoges||[]).reduce((s,a)=>s+timiApp(a.id).eff,0);}
+function timiHTML(id){const t=timiApp(id),sim=(GL==="el"&&t.simeiosi)?` · ${esc(t.simeiosi)}`:"";
+  if(t.eff===0)return `<span>${T("dorean")}${sim}</span>`;
+  if(t.of!=null)return `<span><s style="opacity:.55">${t.base} €</s> <b>${t.of} €</b>${t.etiketa?` · ${esc(t.etiketa)}`:""}</span>`;
+  return `<span>${t.base} €${sim}</span>`;
+}
+function paketoHTML(){const p=timiPaketo();
+  return p.of!=null?`<s style="opacity:.55">${p.base} €</s> <b>${p.of} €</b>${p.etiketa?` · ${esc(p.etiketa)}`:""}`:`${p.base} €`;
+}
+
 async function fortoseLista(){
   try{
     const r=await fetch("efarmoges.json?t="+Date.now(),{cache:"no-store"});
-    if(!r.ok)throw 0;
-    const d=await r.json();
-    if(d&&Array.isArray(d.efarmoges)){DATA=d;apothiki.vale(LISTA_TOPIKA,d)}
+    if(r.ok){const d=await r.json();if(d&&Array.isArray(d.efarmoges)){DATA=d;apothiki.vale(LISTA_TOPIKA,d)}}
+  }catch{}
+  try{
+    const rk=await fetch("koina.json?t="+Date.now(),{cache:"no-store"});
+    if(rk.ok){const dk=await rk.json();if(dk&&dk.times){KOINA=dk;apothiki.vale(KOINA_TOPIKA,dk)}}
   }catch{}
   zografise();
 }
@@ -423,7 +443,7 @@ function zografiseKleidi(){
     k.className="kleidi";
     const elixe=KATASTASI.elixe?`<p class="lathos">${T("elikse",imerominia(KATASTASI.eos))}</p>`:"";
     k.innerHTML=`<div class="pano"><div class="simadi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17324D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-      <div><h2>${T("ena_kleidi")}</h2><p>${T("ena_kleidi_p",p.timi_etos,p.athroisma_xorista)}</p></div></div>
+      <div><h2>${T("ena_kleidi")}</h2><p>${T("ena_kleidi_p",timiPaketo().eff,synoloXorista())}</p></div></div>
       ${elixe}<button class="koumpi-ble" id="koumpiKleidi">${T("exo_kleidi")}</button>`;
   }
   $("#koumpiKleidi").onclick=anoixeKleidi;
@@ -553,7 +573,7 @@ window.addEventListener("popstate",e=>{
 /* ---------- Παράθυρο κλειδιού ---------- */
 function anoixeKleidi(){
   const p=DATA.paketo||PROEPILOGI.paketo;
-  const xorista=(DATA.efarmoges||[]).map(a=>`<div class="grammi"><span>${esc(a["onoma_"+GL]||a.onoma)}</span><span>${esc(a.timi||"")}</span></div>`).join("");
+  const xorista=(DATA.efarmoges||[]).map(a=>`<div class="grammi"><span>${esc(a["onoma_"+GL]||a.onoma)}</span>${timiHTML(a.id)}</div>`).join("");
   const s=document.createElement("div");s.className="skia";
   const energo=KATASTASI.energo;
   s.innerHTML=`<div class="fyllo" role="dialog" aria-modal="true">
@@ -561,10 +581,10 @@ function anoixeKleidi(){
     ${energo?`<p>${T("energo_eos_p",imerominia(KATASTASI.eos),esc(KATASTASI.email))}</p><p>${T("ksekleidonei_pro")}</p>`
       :`<p>${T("ena_ksekleidonei")}</p>`}
     <div class="timokatalogos">
-      <div class="grammi megali"><span>${T("full_1xronos")}</span><span>${p.timi_etos} €</span></div>
+      <div class="grammi megali"><span>${T("full_1xronos")}</span><span>${paketoHTML()}</span></div>
       <hr><div class="grammi" style="font-weight:700"><span>${T("xorista_ana")}</span><span></span></div>
       ${xorista}
-      <hr><div class="grammi" style="font-weight:700"><span>${T("synolo_xorista")}</span><span>${p.athroisma_xorista} €</span></div>
+      <hr><div class="grammi" style="font-weight:700"><span>${T("synolo_xorista")}</span><span>${synoloXorista()} €</span></div>
     </div>
     <div class="oroi">
       <b>${T("kathara")}</b>
