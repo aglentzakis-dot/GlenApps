@@ -31,14 +31,6 @@
       "timi": "15 € τον χρόνο · Κοινόχρηστα χωριστά"
     },
     {
-      "id": "imerologio",
-      "onoma": "Ημερολόγιο",
-      "dieuthinsi": "https://aglentzakis-dot.github.io/imerologio/",
-      "eikonidio": "https://aglentzakis-dot.github.io/imerologio/icon-192.png",
-      "perigrafi": "Τα ραντεβού των πελατών σου οργανωμένα, για κάθε επάγγελμα.",
-      "timi": "δωρεάν · Pro 29 € τον 1ο χρόνο, μετά 39 € (κρατήσεις από πελάτες, στατιστικά)"
-    },
-    {
       "id": "glenread",
       "onoma": "GlenRead",
       "dieuthinsi": "https://aglentzakis-dot.github.io/GlenRead/",
@@ -53,6 +45,14 @@
       "eikonidio": "https://aglentzakis-dot.github.io/ergaleiothiki/icon-192.png",
       "perigrafi": "Αλφάδι, μετρήσεις και υπολογισμοί υλικών για κάθε μάστορα.",
       "timi": "δωρεάν"
+    },
+    {
+      "id": "imerologio",
+      "onoma": "Ημερολόγιο",
+      "dieuthinsi": "https://aglentzakis-dot.github.io/imerologio/",
+      "eikonidio": "https://aglentzakis-dot.github.io/imerologio/icon-192.png",
+      "perigrafi": "Τα ραντεβού των πελατών σου οργανωμένα, για κάθε επάγγελμα.",
+      "timi": "δωρεάν · Pro 29 € τον 1ο χρόνο, μετά 39 € (κρατήσεις από πελάτες, στατιστικά)"
     },
     {
       "id": "glenscanner",
