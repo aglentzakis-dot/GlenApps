@@ -8,13 +8,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.14">
+<meta name="app-version" content="0.15">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.14">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.14">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.15">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.15">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -148,7 +148,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.14" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.15" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -159,7 +159,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.14" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.15" x="11" y="8.5" width="22" height="22"/>
     </svg>
     <div><h1>GlenApps</h1><small id="ypotitlos">Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
     <button class="glossaKoumpi" id="koumpiGlossa" aria-label="Γλώσσα / Language">🌐 <span id="glossaEtiketa">EL</span></button>
@@ -168,7 +168,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.14" alt="">
+      <img src="eikonidia/icon-192.png?v=0.15" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -216,7 +216,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.14";
+const APP_VERSION="0.15";
 const APP_BUILD="14/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
@@ -526,6 +526,17 @@ $("#kateListat").addEventListener("contextmenu",e=>e.preventDefault());
 const plaisia=new Map();      // id -> iframe (μένουν φορτωμένα για γρήγορη εναλλαγή)
 const MEGISTO=3;
 let trexousa=null;
+/* ---------- Χρώμα πλαισίου: να ταιριάζει με την εφαρμογή που ανοίγει (όχι κίτρινο πάνω/κάτω) ---------- */
+const metaThema=document.querySelector('meta[name="theme-color"]');
+const XROMA_PYLIS="#FDD117";
+const xromaEfarm=new Map();          // id -> theme-color της εφαρμογής
+function diavaseXromaEfarm(f,id){
+  try{const m=f.contentDocument&&f.contentDocument.querySelector('meta[name="theme-color"]');if(m&&m.content)xromaEfarm.set(id,m.content.trim())}catch{}
+  return xromaEfarm.get(id)||"#17324D";
+}
+function valeXroma(c){if(metaThema)metaThema.content=c;$("#provoli").style.background=c;$("#plaisia").style.background=c;}
+function epanafereXroma(){if(metaThema)metaThema.content=XROMA_PYLIS;$("#provoli").style.background="";$("#plaisia").style.background="";}
+
 function anoixeEfarmogi(i,apoBara){
   const a=(DATA.efarmoges||[])[i]; if(!a)return;
   if(!navigator.onLine&&!plaisia.has(a.id))minima(T("xoris_sindesi"));
@@ -534,6 +545,7 @@ function anoixeEfarmogi(i,apoBara){
   if(!trexousa||!apoBara)history.pushState({efarmogi:a.id},"","#"+a.id);
   else history.replaceState({efarmogi:a.id},"","#"+a.id);
   trexousa=a;
+  valeXroma(xromaEfarm.get(a.id)||"#17324D");   // αμέσως σκούρο, να μη φανεί κίτρινο
   plaisia.forEach((f,id)=>f.style.visibility=id===a.id?"visible":"hidden");
   let f=plaisia.get(a.id);
   if(!f){
@@ -542,7 +554,7 @@ function anoixeEfarmogi(i,apoBara){
     f.title=a.onoma;
     f.allow="geolocation; camera; microphone; clipboard-read; clipboard-write; fullscreen; web-share; screen-wake-lock";
     f.src=meGlossa(a.dieuthinsi);
-    f.onload=()=>{if(trexousa&&trexousa.id===a.id)$("#fortosi").classList.add("krypto")};
+    f.onload=()=>{const c=diavaseXromaEfarm(f,a.id);if(trexousa&&trexousa.id===a.id){$("#fortosi").classList.add("krypto");valeXroma(c)}};
     $("#plaisia").appendChild(f);
     plaisia.set(a.id,f);
     // κρατάμε το πολύ 3 ανοιχτές, για να μη βαραίνει το κινητό
@@ -558,6 +570,7 @@ function simeioseEnergi(){
 }
 function piseStinArxiki(apoIstoriko){
   $("#provoli").classList.add("krypto");$("#arxiki").removeAttribute("aria-hidden");
+  epanafereXroma();   // πίσω στο κίτρινο της πύλης
   trexousa=null;
   if(!apoIstoriko&&history.state&&history.state.efarmogi)history.back();
   elegxeKleidi().then(zografise);   // μπορεί να άλλαξε το κλειδί μέσα σε κάποια εφαρμογή
