@@ -7,14 +7,15 @@
 <html lang="el">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self'; frame-src 'self' https://aglentzakis-dot.github.io; child-src 'self' https://aglentzakis-dot.github.io; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="app-version" content="0.18">
+<meta name="app-version" content="0.19">
 <title>GlenApps</title>
 <meta name="description" content="Όλες οι εφαρμογές GlenApps με ένα εικονίδιο.">
 <meta name="theme-color" content="#FDD117">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="eikonidia/icon-192.png?v=0.18">
-<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.18">
+<link rel="icon" href="eikonidia/icon-192.png?v=0.19">
+<link rel="apple-touch-icon" href="eikonidia/apple-touch-icon.png?v=0.19">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="GlenApps">
@@ -149,7 +150,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 <body>
 
 <div id="enarxi">
-  <img src="eikonidia/G-glenapps.png?v=0.18" alt="">
+  <img src="eikonidia/G-glenapps.png?v=0.19" alt="">
   <b>GlenApps</b>
   <span>Όλες οι εφαρμογές σου, με ένα εικονίδιο</span>
 </div>
@@ -160,7 +161,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
       <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA628"/><stop offset="1" stop-color="#EC4E0E"/></linearGradient></defs>
       <path d="M22 51C22 51 3 31 3 19.5A19 19 0 0 1 41 19.5C41 31 22 51 22 51Z" fill="url(#pg)"/>
       <circle cx="22" cy="19.5" r="14" fill="#fff"/>
-      <image href="eikonidia/G-glenapps.png?v=0.18" x="11" y="8.5" width="22" height="22"/>
+      <image href="eikonidia/G-glenapps.png?v=0.19" x="11" y="8.5" width="22" height="22"/>
     </svg>
     <div><h1>GlenApps</h1><small id="ypotitlos">Όλες οι εφαρμογές σου σε ένα σημείο</small></div>
     <button class="glossaKoumpi" id="koumpiGlossa" aria-label="Γλώσσα / Language">🌐 <span id="glossaEtiketa">EL</span></button>
@@ -169,7 +170,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
   <main>
     <section class="egkatastasi krypto" id="kartaEgkat">
-      <img src="eikonidia/icon-192.png?v=0.18" alt="">
+      <img src="eikonidia/icon-192.png?v=0.19" alt="">
       <div>
         <h2>Εγκατάσταση στο κινητό</h2>
         <p id="egkatKeimeno">Βάλε το GlenApps στην αρχική οθόνη: ένα εικονίδιο, όλες οι εφαρμογές.</p>
@@ -198,7 +199,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
     <div id="fortosi"><img id="fortosiEik" alt=""><span id="fortosiKeim">Ανοίγει…</span></div>
   </div>
   <button id="baraLabi" aria-label="Μενού GlenApps — αλλαγή εφαρμογής">
-    <img src="eikonidia/G-glenapps.png?v=0.18" alt="">
+    <img src="eikonidia/G-glenapps.png?v=0.19" alt="">
     <span>GlenApps</span>
     <svg width="18" height="12" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6l7 5 7-5"/></svg>
   </button>
@@ -219,7 +220,7 @@ footer button{text-decoration:underline;color:var(--ble);font-size:13px;padding:
 
 <script>
 "use strict";
-const APP_VERSION="0.18";
+const APP_VERSION="0.19";
 const APP_BUILD="14/10/2026";
 const KLEIDI_KOINO="glenapps-kleidi";      // κοινό για όλες τις εφαρμογές
 const LISTA_TOPIKA="glenapps-lista";
@@ -361,6 +362,7 @@ function meGlossa(url){try{const u=new URL(url,location.href);u.searchParams.set
 /* ---------- Λίστα εφαρμογών (από το κοινό αρχείο) ---------- */
 const PROEPILOGI={paketo:{timi_etos:99,athroisma_xorista:123},efarmoges:[]};
 let DATA=apothiki.pare(LISTA_TOPIKA)||PROEPILOGI;
+if(DATA&&Array.isArray(DATA.efarmoges))DATA.efarmoges=DATA.efarmoges.filter(a=>egkyriDieuth(a.dieuthinsi));
 
 /* ---------- Κοινές τιμές & προσφορές (μία πηγή αλήθειας: koina.json) ---------- */
 const KOINA_TOPIKA="glenapps-koina";
@@ -382,7 +384,7 @@ function paketoHTML(){const p=timiPaketo();
 async function fortoseLista(){
   try{
     const r=await fetch("efarmoges.json?t="+Date.now(),{cache:"no-store"});
-    if(r.ok){const d=await r.json();if(d&&Array.isArray(d.efarmoges)){DATA=d;apothiki.vale(LISTA_TOPIKA,d)}}
+    if(r.ok){const d=await r.json();if(d&&Array.isArray(d.efarmoges)){d.efarmoges=d.efarmoges.filter(a=>egkyriDieuth(a.dieuthinsi));DATA=d;apothiki.vale(LISTA_TOPIKA,d)}}
   }catch{}
   try{
     const rk=await fetch("koina.json?t="+Date.now(),{cache:"no-store"});
@@ -426,15 +428,27 @@ async function elegxeKleidi(){
 }
 
 /* ---------- Αρχική ---------- */
+// Ασφάλεια: δεκτές μόνο https διευθύνσεις· εικονίδιο μόνο https ή σχετική διαδρομή.
+function egkyriDieuth(u){return typeof u==="string"&&/^https:\/\//i.test(u);}
+function egkyriEikona(u){return typeof u==="string"&&(/^https:\/\//i.test(u)||/^(\.\.?\/|\/|eikonidia\/)/.test(u));}
 function eikonidioHTML(a,klasi){
   const gr=esc((a.onoma||"?").trim().charAt(0));
-  return `<img class="${klasi||""}" src="${esc(a.eikonidio)}" alt="" loading="lazy" onerror="eikonidioLathos(this,'${esc(a.dieuthinsi)}','${gr}')">`;
+  const src=egkyriEikona(a.eikonidio)?esc(a.eikonidio):"";
+  // Χωρίς inline onerror (αποφυγή εκτέλεσης κώδικα από το JSON)· ο χειρισμός μπαίνει με addEventListener (syndeseEikonidia).
+  return `<img class="${klasi||""}" src="${src}" alt="" loading="lazy" data-dieuth="${esc(a.dieuthinsi||"")}" data-gr="${gr}">`;
 }
-window.eikonidioLathos=(img,dieuth,gr)=>{
-  // δοκιμάζει και τη δεύτερη συνηθισμένη θέση, αλλιώς γράμμα
-  if(!img.dataset.dokimi){img.dataset.dokimi="1";const alt=dieuth.replace(/\/?$/,"/")+(img.src.includes("/eikonidia/")?"icon-192.png":"eikonidia/icon-192.png");img.src=alt;return}
+function eikonidioLathos(img){
+  const dieuth=img.dataset.dieuth||"", gr=img.dataset.gr||"?";
+  if(!img.dataset.dokimi&&egkyriDieuth(dieuth)){img.dataset.dokimi="1";img.src=dieuth.replace(/\/?$/,"/")+(img.src.includes("/eikonidia/")?"icon-192.png":"eikonidia/icon-192.png");return}
   const d=document.createElement("div");d.className="gramma "+(img.className||"");d.textContent=gr;img.replaceWith(d);
-};
+}
+function syndeseEikonidia(root){
+  (root||document).querySelectorAll("img[data-gr]").forEach(img=>{
+    if(img._syn)return; img._syn=1;
+    img.addEventListener("error",()=>eikonidioLathos(img));
+    if(!img.getAttribute("src")||(img.complete&&img.naturalWidth===0))eikonidioLathos(img);
+  });
+}
 function zografiseKleidi(){
   const k=$("#kartaKleidi"),p=DATA.paketo||PROEPILOGI.paketo;
   if(KATASTASI.energo){
@@ -464,6 +478,7 @@ function zografise(){
   document.querySelectorAll(".plakidio").forEach(b=>b.onclick=()=>anoixeEfarmogi(+b.dataset.i));
   xtiseBara();
   simeioseEnergi();
+  syndeseEikonidia();
 }
 
 /* ---------- Κάτω μπάρα: σειρά με σύρσιμο ---------- */
@@ -540,6 +555,14 @@ function diavaseXromaEfarm(f,id){
 function valeXroma(c){if(metaThema)metaThema.content=c;$("#provoli").style.background=c;$("#plaisia").style.background=c;}
 function epanafereXroma(){if(metaThema)metaThema.content=XROMA_PYLIS;$("#provoli").style.background="";$("#plaisia").style.background="";}
 
+// Άδειες iframe: βασικές (ακίνδυνες) πάντα· οι ευαίσθητες μόνο αν τις δηλώνει η εφαρμογή στο efarmoges.json ("adeies"),
+// και μόνο από εγκεκριμένη λίστα (ώστε πειραγμένο JSON να μη ζητήσει άλλες).
+const ADEIES_OK=["geolocation","camera","clipboard-read"];   // χωρίς μικρόφωνο: καμία εφαρμογή δεν το χρειάζεται
+function allowEfarm(a){
+  const basi=["fullscreen","web-share","screen-wake-lock","clipboard-write"];
+  const extra=(Array.isArray(a.adeies)?a.adeies:[]).filter(x=>ADEIES_OK.includes(x));
+  return [...basi,...extra].join("; ");
+}
 function anoixeEfarmogi(i,apoBara){
   const a=(DATA.efarmoges||[])[i]; if(!a)return;
   if(!navigator.onLine&&!plaisia.has(a.id))minima(T("xoris_sindesi"));
@@ -555,7 +578,7 @@ function anoixeEfarmogi(i,apoBara){
     $("#fortosiEik").src=a.eikonidio;$("#fortosiKeim").textContent=T("anoigei_tin",a["onoma_"+GL]||a.onoma);$("#fortosi").classList.remove("krypto");
     f=document.createElement("iframe");
     f.title=a.onoma;
-    f.allow="geolocation; camera; microphone; clipboard-read; clipboard-write; fullscreen; web-share; screen-wake-lock";
+    f.allow=allowEfarm(a);
     f.src=meGlossa(a.dieuthinsi);
     f.onload=()=>{const c=diavaseXromaEfarm(f,a.id);if(trexousa&&trexousa.id===a.id){$("#fortosi").classList.add("krypto");valeXroma(c)}};
     $("#plaisia").appendChild(f);

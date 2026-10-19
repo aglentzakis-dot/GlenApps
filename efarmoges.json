@@ -12,7 +12,11 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/dromologio/",
       "eikonidio": "https://aglentzakis-dot.github.io/dromologio/eikonidia/icon-192.png",
       "perigrafi": "Πελάτες, εργασίες, υπενθυμίσεις και η διαδρομή της ημέρας σου.",
-      "timi": "29 € τον 1ο χρόνο, μετά 39 €"
+      "timi": "29 € τον 1ο χρόνο, μετά 39 €",
+      "adeies": [
+        "geolocation",
+        "clipboard-read"
+      ]
     },
     {
       "id": "kontamou",
@@ -20,7 +24,10 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/kontamou/",
       "eikonidio": "https://aglentzakis-dot.github.io/kontamou/icon-192.png",
       "perigrafi": "Βρες μάστορες και επαγγελματίες πάνω στον χάρτη, κοντά σου.",
-      "timi": "μαζί με το Δρομολόγιο"
+      "timi": "μαζί με το Δρομολόγιο",
+      "adeies": [
+        "geolocation"
+      ]
     },
     {
       "id": "tameia",
@@ -28,7 +35,10 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/tameia/",
       "eikonidio": "https://aglentzakis-dot.github.io/tameia/icon-192.png",
       "perigrafi": "Έσοδα και έξοδα για το σπίτι, την επιχείρηση και τα κοινόχρηστα.",
-      "timi": "15 € τον χρόνο · Κοινόχρηστα χωριστά"
+      "timi": "15 € τον χρόνο · Κοινόχρηστα χωριστά",
+      "adeies": [
+        "clipboard-read"
+      ]
     },
     {
       "id": "glenread",
@@ -36,7 +46,10 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/GlenRead/",
       "eikonidio": "https://aglentzakis-dot.github.io/GlenRead/icon-192.png",
       "perigrafi": "Διάβασε και αναγνώρισε τα έγγραφα PDF σου εύκολα από το κινητό.",
-      "timi": "δωρεάν"
+      "timi": "δωρεάν",
+      "adeies": [
+        "camera"
+      ]
     },
     {
       "id": "ergaleiothiki",
@@ -44,7 +57,11 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/ergaleiothiki/",
       "eikonidio": "https://aglentzakis-dot.github.io/ergaleiothiki/icon-192.png",
       "perigrafi": "Αλφάδι, μετρήσεις και υπολογισμοί υλικών για κάθε μάστορα.",
-      "timi": "δωρεάν"
+      "timi": "δωρεάν",
+      "adeies": [
+        "geolocation",
+        "camera"
+      ]
     },
     {
       "id": "imerologio",
@@ -52,7 +69,8 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/imerologio/",
       "eikonidio": "https://aglentzakis-dot.github.io/imerologio/icon-192.png",
       "perigrafi": "Τα ραντεβού των πελατών σου οργανωμένα, για κάθε επάγγελμα.",
-      "timi": "δωρεάν · Pro 29 € τον 1ο χρόνο, μετά 39 € (κρατήσεις από πελάτες, στατιστικά)"
+      "timi": "δωρεάν · Pro 29 € τον 1ο χρόνο, μετά 39 € (κρατήσεις από πελάτες, στατιστικά)",
+      "adeies": []
     },
     {
       "id": "glenscanner",
@@ -60,7 +78,10 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/GlenScanner/",
       "eikonidio": "https://aglentzakis-dot.github.io/GlenScanner/icon-192.png",
       "perigrafi": "Σάρωσε έγγραφα με την κάμερα και κάν’ τα καθαρά PDF.",
-      "timi": "δωρεάν"
+      "timi": "δωρεάν",
+      "adeies": [
+        "camera"
+      ]
     },
     {
       "id": "paraggelies",
@@ -68,7 +89,8 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/paraggelies/",
       "eikonidio": "https://aglentzakis-dot.github.io/paraggelies/eikonidia/icon-192.png",
       "perigrafi": "Οι πελάτες σου παραγγέλνουν με έναν σύνδεσμο, εσύ τα βλέπεις όλα μαζεμένα.",
-      "timi": "79 € τον χρόνο (προσφορά 49 € τον 1ο)"
+      "timi": "79 € τον χρόνο (προσφορά 49 € τον 1ο)",
+      "adeies": []
     },
     {
       "id": "fotometra",
@@ -76,7 +98,10 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/fotometra/",
       "eikonidio": "https://aglentzakis-dot.github.io/fotometra/icon-192.png",
       "perigrafi": "Σημειώσεις, ίσιες γραμμές και διαστάσεις πάνω στις φωτογραφίες σου.",
-      "timi": "μαζί με το Δρομολόγιο · χωριστά 12 €"
+      "timi": "μαζί με το Δρομολόγιο · χωριστά 12 €",
+      "adeies": [
+        "camera"
+      ]
     },
     {
       "id": "fishiq",
@@ -84,7 +109,10 @@
       "dieuthinsi": "https://aglentzakis-dot.github.io/fishing-log/",
       "eikonidio": "https://aglentzakis-dot.github.io/fishing-log/icon-192.png",
       "perigrafi": "Ημερολόγιο ψαρέματος με καιρό, στατιστικά και σκορ ημέρας.",
-      "timi": "δωρεάν"
+      "timi": "δωρεάν",
+      "adeies": [
+        "geolocation"
+      ]
     }
   ]
 }
