@@ -2,8 +2,8 @@
   GlenApps
   © 2026 Ανδρέας Μ. Γλεντζάκης (Andreas M. Glentzakis). Με την επιφύλαξη παντός δικαιώματος.
 */
-const CACHE="glenapps-0.19";
-const SHELL=["./","./index.html","./manifest.json","./efarmoges.json","./koina.json",
+const CACHE="glenapps-0.20";
+const SHELL=["./","./index.html","./plaisio.js","./manifest.json","./efarmoges.json","./koina.json",
   "./eikonidia/icon-192.png?v=0.19","./eikonidia/icon-512.png?v=0.19","./eikonidia/icon-512-maskable.png?v=0.19",
   "./eikonidia/apple-touch-icon.png?v=0.19","./eikonidia/G-glenapps.png?v=0.19"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})))))});
