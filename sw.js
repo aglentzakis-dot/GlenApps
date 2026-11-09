@@ -2,7 +2,18 @@
   GlenApps
   © 2026 Ανδρέας Μ. Γλεντζάκης (Andreas M. Glentzakis). Με την επιφύλαξη παντός δικαιώματος.
 */
-const CACHE="glenapps-0.21";
+/* ΚΑΝΟΝΑΣ GlenApps (10/11/2026): η εφαρμογή ανοίγει αμέσως από τη συσκευή· δίκτυο το πολύ 3″ — ΜΗΝ αφαιρεθεί.
+   gaNet(δίκτυο, αποθήκη, συμβάν): αν το δίκτυο δεν απαντήσει σε 3″ και υπάρχει αποθηκευμένο αντίγραφο, δίνεται αυτό
+   (το δίκτυο συνεχίζει στο παρασκήνιο και ενημερώνει την αποθήκη)· μετά από καθυστέρηση, για 30″ όλα κατευθείαν από τη συσκευή.
+   Σφάλμα διακομιστή (5xx) δεν αντικαθιστά το αποθηκευμένο. Οι αναβαθμίσεις έρχονται όπως πριν (νέο όνομα αποθήκης σε κάθε έκδοση). */
+var GA_MS=3000,gaSlow=0;
+function gaNet(net,fromCache,ev){var p=Promise.resolve(net);try{ev&&ev.waitUntil&&ev.waitUntil(p.catch(function(){}))}catch(x){}
+  function fc(){try{return Promise.resolve(fromCache()).catch(function(){})}catch(x){return Promise.resolve()}}
+  if(Date.now()<gaSlow)return fc().then(function(c){return c||p});
+  return new Promise(function(ok){var done=false,t;function fin(r){if(!done){done=true;clearTimeout(t);ok(r)}}
+    t=setTimeout(function(){fc().then(function(c){if(c){gaSlow=Date.now()+30000;fin(c)}})},GA_MS);
+    p.then(function(r){if(r&&r.status>=500)fc().then(function(c){fin(c||r)});else fin(r)},function(){fc().then(function(c){fin(c||Response.error())})});});}
+const CACHE="glenapps-0.22";
 const SHELL=["./","./index.html","./plaisio.js","./manifest.json","./efarmoges.json","./koina.json",
   "./eikonidia/icon-192.png?v=0.19","./eikonidia/icon-512.png?v=0.19","./eikonidia/icon-512-maskable.png?v=0.19",
   "./eikonidia/apple-touch-icon.png?v=0.19","./eikonidia/G-glenapps.png?v=0.19"];
@@ -18,9 +29,9 @@ self.addEventListener("fetch",e=>{
   // σελίδα και λίστα: πρώτα από το διαδίκτυο, αλλιώς από την προσωρινή μνήμη
   if(r.mode==="navigate"||/\/(index\.html)?$/.test(u.pathname)||/\/(efarmoges|koina)\.json$/.test(u.pathname)){
     const kleidi=/\/(efarmoges|koina)\.json$/.test(u.pathname)?("./"+u.pathname.split("/").pop()):"./index.html";
-    e.respondWith(fetch(r.mode==="navigate"?new Request(r.url,{cache:"reload",credentials:"same-origin"}):r).then(res=>{
+    e.respondWith(gaNet(fetch(r.mode==="navigate"?new Request(r.url,{cache:"reload",credentials:"same-origin"}):r).then(res=>{
       if(res.ok){const c=res.clone();caches.open(CACHE).then(x=>x.put(kleidi,c)).catch(()=>{})}return res;
-    }).catch(()=>caches.match(kleidi).then(x=>x||caches.match("./")).then(x=>x||Response.error())));
+    }),()=>caches.match(kleidi).then(x=>x||caches.match("./")).then(x=>x||Response.error()),e));
     return;
   }
   e.respondWith(caches.match(r).then(x=>x||fetch(r).then(res=>{if(res.ok){const c=res.clone();caches.open(CACHE).then(y=>y.put(r,c)).catch(()=>{})}return res})));
